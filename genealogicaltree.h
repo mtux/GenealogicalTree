@@ -1,21 +1,3 @@
-/*
- * <one line to give the program's name and a brief idea of what it does.>
- * Copyright (C) 2016  <copyright holder> <email>
- * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
- */
 
 #ifndef GENEALOGICALTREE_H
 #define GENEALOGICALTREE_H
@@ -23,40 +5,65 @@
 #include <string>
 #include <ctime>
 #include <map>
+#include <vector>
+#include <memory>
+#include <experimental/optional>
 
-using PersonId = int32_t;
-const PersonId UNKNOWN = -1;
+using String = std::string;
 
 struct Person
 {
-    std::string Name;
-    std::string LastName;
-    time_t      BirthDate;
-    std::string Location;
-
-    PersonId    Parent1 = UNKNOWN;
-    PersonId    Parent2 = UNKNOWN;
+    Person(const String& name, const String& l_name, const String& location, time_t b_day)
+    :Name(name), LastName(l_name), Location(location), BirthDate(b_day)
+    {}
+    
+    String  Name;
+    String  LastName;
+    String  Location;
+    time_t  BirthDate;
 };
+using Persons = std::vector<Person>;
+using OptionalPerson = std::experimental::optional<Person>;
 
 class GenealogicalTree
 {
+    struct PersonNode;
+    using PersonPtr = std::shared_ptr<PersonNode>;
+    
 public:
     GenealogicalTree();
     ~GenealogicalTree();
+    
+    bool AddPerson( Person person, OptionalPerson parent1 = OptionalPerson(), OptionalPerson parent2 = OptionalPerson() );
+    
+    Persons FindPersonByName( const String& name );
+    Persons FindPersonByLastName( const String& last_name );
+    Persons FindPersonByLocation( const String& location );
+    Persons FindPersonByBirthDate( time_t birth_date );
 
     GenealogicalTree(const GenealogicalTree& other) = delete;
     GenealogicalTree& operator=(const GenealogicalTree& other) = delete;
     bool operator==(const GenealogicalTree& other) = delete;
-
-private:    
-    //TODO: Replace "std::map" with a homemade "balanced binary search tree" if required.
-    std::map<PersonId, Person> People;
-    PersonId NextPersonId = 0;
     
-    std::multimap<std::string, PersonId> NameMap;
-    std::multimap<std::string, PersonId> LastNameMap;
-    std::multimap<std::string, PersonId> LocationMap;
-    std::multimap<time_t, PersonId>      BirthDateMap;
+private:
+    void SetParent( PersonPtr person, Person parent );
+
+private:
+    struct PersonNode
+    {
+        PersonNode(const Person& p_info) : Info(p_info) {}
+        
+        Person      Info;
+        
+        PersonPtr   Parent1 = nullptr;
+        PersonPtr   Parent2 = nullptr;
+    };
+    
+    //TODO: Replace "std map" with a homemade "balanced binary search tree" if required.    
+    std::multimap<String, PersonPtr> NameMap;
+    std::multimap<String, PersonPtr> LastNameMap;
+    std::multimap<String, PersonPtr> LocationMap;
+    std::multimap<time_t, PersonPtr> BirthDateMap;
 };
 
 #endif // GENEALOGICALTREE_H

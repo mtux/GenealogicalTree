@@ -1,21 +1,3 @@
-/*
- * <one line to give the program's name and a brief idea of what it does.>
- * Copyright (C) 2016  <copyright holder> <email>
- * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
- */
 
 #include "genealogicaltree.h"
 #include <utility>
@@ -28,4 +10,62 @@ GenealogicalTree::GenealogicalTree()
 GenealogicalTree::~GenealogicalTree()
 {
 
+}
+
+bool GenealogicalTree::AddPerson( Person person, OptionalPerson parent1, OptionalPerson parent2 )
+{
+    auto person_node = std::make_shared<PersonNode>( person );
+
+    bool ok = false;
+    if( person_node ) {
+        NameMap.insert(      std::make_pair(person.Name,      person_node) );
+        LastNameMap.insert(  std::make_pair(person.LastName,  person_node) );
+        LocationMap.insert(  std::make_pair(person.Location,  person_node) );
+        BirthDateMap.insert( std::make_pair(person.BirthDate, person_node) );
+        ok = true;
+        
+        if( parent1 )
+            SetParent( person_node, parent1.value() );
+        if( parent2 )
+            SetParent( person_node, parent2.value() );
+    }
+    
+    return ok;
+}
+
+void GenealogicalTree::SetParent(GenealogicalTree::PersonPtr person, Person parent)
+{
+
+}
+
+template<typename MapType, typename KeyType>
+Persons FindPersons(const MapType& map, KeyType key)
+{
+    Persons ids;
+    auto it = map.lower_bound(key);
+    while ( it != map.end() && (*it).first == key ) {
+        ids.push_back( (*it).second->Info );
+        ++it;
+    }
+    return ids;
+}
+
+Persons GenealogicalTree::FindPersonByName( const String& name )
+{
+    return FindPersons(NameMap, name);
+}
+
+Persons GenealogicalTree::FindPersonByLastName( const String& last_name )
+{
+    return FindPersons(LastNameMap, last_name);
+}
+
+Persons GenealogicalTree::FindPersonByLocation( const String& location )
+{
+    return FindPersons(LocationMap, location);
+}
+
+Persons GenealogicalTree::FindPersonByBirthDate( time_t birth_date )
+{
+    return FindPersons(BirthDateMap, birth_date);
 }
