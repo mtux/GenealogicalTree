@@ -22,11 +22,14 @@ void test()
     Person p1 {"Bob", "Lee", "Malaysia", std::mktime(&t) };
     Person p2 {"Jake", "Lee", "Iran", std::mktime(&t) };
     Person p3 {"Bob", "Will", "Malaysia", std::mktime(&t)   };
-    tree.AddPerson(p1);
-    tree.AddPerson(p2);
-    tree.AddPerson(p3);
-    auto res = tree.FindPersonByName("Bob");
-    for(auto person: res){
-        std::cout << person.Name << std::endl;
+//     tree.AddPerson(p1);
+//     tree.AddPerson(p2);
+    tree.AddPerson(p3, p1, p2);
+    auto res = tree.FindPersonPtrByLastName("Will");
+    for(auto p: res){
+        std::cout << p->Info.Name << ':' << p->Info.LastName << std::endl;
+        std::cout << "Parent: " << p->Parent1->Info.Name << ':' << p->Parent1->Info.LastName << std::endl;
+        std::cout << "Parent: " << p->Parent2->Info.Name << ':' << p->Parent2->Info.LastName << std::endl;
+        std::cout << "=====================" ;
     }
 }
