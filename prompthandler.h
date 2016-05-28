@@ -7,15 +7,17 @@
 class PromptHandler
 {
 public:
-    PromptHandler( int argc, char **argv );
+    PromptHandler(  );
     ~PromptHandler();
     
     int EventLoop();
     
 private:
-    void DisplayCommandOptions();
-    void GenerateFile(int num_of_people, const std::string& path);
-    void LoadFile(const std::string& path);
+    void GenerateFile();
+    void LoadFile();
+    void DisplayEventOptions();
+    void FindPerson();
+    void DisplayPersons( const Persons& persons );
     
     GenealogicalTree Tree;
 };

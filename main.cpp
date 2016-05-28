@@ -3,7 +3,7 @@
 
 int main(int argc, char **argv)
 {
-    PromptHandler app(argc, argv);
+    PromptHandler app;
     
     return app.EventLoop();
 }
