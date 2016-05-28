@@ -2,7 +2,10 @@
 #ifndef GENEALOGICALTREE_H
 #define GENEALOGICALTREE_H
 
+#include "utils.h"
+
 #include <string>
+#include <ostream>
 #include <ctime>
 #include <map>
 #include <vector>
@@ -13,6 +16,7 @@ using String = std::string;
 
 struct Person
 {
+    Person() : BirthDate(-1) {}
     Person(const String& name, const String& l_name, const String& location, time_t b_day)
     :Name(name), LastName(l_name), Location(location), BirthDate(b_day)
     {}
@@ -21,7 +25,23 @@ struct Person
     String  LastName;
     String  Location;
     time_t  BirthDate;
+    
+    void SetBirthDate( Utils::Date date )
+    {
+        BirthDate = Utils::ConvertDateToCTime( date );
+    }
+    Utils::Date GetBirthDate() const
+    {
+        return Utils::ConvertCTimeToDate( BirthDate );
+    }
 };
+
+inline std::ostream& operator<< (std::ostream& os, const Person& p)
+{
+    auto date = p.GetBirthDate();
+    os << p.Name << ':' << p.LastName << ':' << p.Location << ':' << date.Year << ':' << date.Month << ':' << date.Day;
+    return os;
+}
 
 using Persons = std::vector<Person>;
 using OptionalPerson = std::experimental::optional<Person>;
