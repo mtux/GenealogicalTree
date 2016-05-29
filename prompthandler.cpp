@@ -21,12 +21,17 @@ PromptHandler::~PromptHandler()
 int PromptHandler::EventLoop()
 {
     char cmd = 0;
+    String tmp;
     while ( cmd != 'q' ) {
         DisplayEventOptions();        
         cin >> cmd;
+        getline(cin, tmp);
         switch( cmd ) {
             case 'f':
                 FindPerson();
+                break;
+            case 'a':
+                FindAllDescendantsForAllAscendants();
                 break;
             case 'l':
                 LoadFile();
@@ -47,6 +52,7 @@ void PromptHandler::DisplayEventOptions()
     cout << "======================================================================" << endl;
     cout << "What do you want to do?"   << endl;
     cout << "\t[f] Find a person"       << endl;
+    cout << "\t[a] Find all descendants with name Bob for all ascendants with name Will" << endl;
     cout << "\t[l] Load a data file"    << endl;
     cout << "\t[g] Generate a random data file" << endl;
     cout << "\t[q] Quit"                << endl;
@@ -63,7 +69,12 @@ void PromptHandler::GenerateFile()
     getline(cin, path);    
     if ( ! path.empty() && num_of_people > 10 && num_of_people < 1000001 ) {
         TreeFileGenerator gen;
-        gen.Generate( path, num_of_people );
+        const bool res = gen.Generate( path, num_of_people );
+        if( res ) {
+            cout << "File \"" << path << "\" generated successfully." << endl;
+        } else {
+            cout << "ERROR: File generation failed!\n";
+        }
     }
 }
 
@@ -146,23 +157,81 @@ void PromptHandler::FindPerson()
     }
 }
 
+const int NUM_WIDTH = 7;
+const int NAME_WIDTH = 12;
+const int LNAME_WIDTH = 20;
+const int LOCATION_WIDTH = 30;
+const int DATE_WIDTH = 15;
+const int TRAILING_WIDTH = 10;
 void PromptHandler::DisplayPersons(const Persons& persons)
 {
-    const int num_width = 7;
-    const int name_width = 12;
-    const int lname_width = 20;
-    const int location_width = 30;
-    cout << left << setw(num_width)      << "#"
-                 << setw(name_width)     << "Name"
-                 << setw(lname_width)    << "LastName"
-                 << setw(location_width) << "Location"
-                                 << '\t' << "BirthDate" << endl;
+    DisplayPersonColumnTitles();
     for( int i = 0; i < persons.size(); ++i ) {
-        auto date = Utils::ConvertCTimeToDate( persons[i].BirthDate );
-        cout << left << setw(num_width)      << i
-                     << setw(name_width)     << persons[i].Name
-                     << setw(lname_width)    << persons[i].LastName
-                     << setw(location_width) << persons[i].Location 
-                                     << '\t' << date.Year << '-' << date.Month << '-' << date.Day << endl;
+        DisplayOnePersonInColumns( i, persons[i] );
+
+    }
+}
+
+void PromptHandler::DisplayPersonColumnTitles(const String& leading_text, const String& trailing_text)
+{
+    cout << leading_text;
+    cout << left << setw(NUM_WIDTH)      << "#"
+                 << setw(NAME_WIDTH)     << "Name"
+                 << setw(LNAME_WIDTH)    << "LastName"
+                 << setw(LOCATION_WIDTH) << "Location"
+                 << setw(DATE_WIDTH)     << "BirthDate"
+                 << setw(TRAILING_WIDTH) << trailing_text << endl;
+}
+
+void PromptHandler::DisplayOnePersonInColumns(int row_num, const Person& person,
+                                              const String& leading_text, const String& trailing_text)
+{
+    auto date = Utils::ConvertCTimeToDate( person.BirthDate );
+    String date_str = to_string(date.Year) + '-' + to_string(date.Month) + '-' + to_string(date.Day);
+    cout << leading_text;
+    if( row_num != -1 ) {
+        cout << left << setw(NUM_WIDTH)      << row_num;
+    }
+    cout << left << setw(NAME_WIDTH)     << person.Name
+                 << setw(LNAME_WIDTH)    << person.LastName
+                 << setw(LOCATION_WIDTH) << person.Location 
+                 << setw(DATE_WIDTH)     << date_str
+                 << setw(TRAILING_WIDTH) << trailing_text << endl;
+}
+
+void PromptHandler::FindAllDescendantsForAllAscendants()
+{
+    string descendant_name, ascendant_name;
+    cout << "\"Bob\"'s Name(press enter to use name \"Bob\")? ";
+    ws(cin);
+    getline(cin, descendant_name);
+    cout << "\"Will\"'s Name(press enter to use name \"Will\")? ";
+    getline(cin, ascendant_name);
+    //TODO: trim input strings
+    if( descendant_name.empty() )
+        descendant_name = "Bob";
+    if( ascendant_name.empty() )
+        ascendant_name = "Will";
+    
+    DescendantInfos all = Tree.FindAllDescendantsForAllAscendants( descendant_name, ascendant_name );
+    
+    for( int i = 0; i < all.size(); ++i ){
+        DisplayDescendantInfo( i, all[i] );
+    }
+}
+
+void PromptHandler::DisplayDescendantInfo(int num, const DescendantInfo& info)
+{
+    cout << "+++++++++++++++++++++++++++++++++++++" << endl;
+    DisplayOnePersonInColumns( -1, info.Descendant );
+    if( info.Ascendants.empty() ) {
+        cout << "\tNo ascendant with the requested name found!";
+    } else {
+        cout << "\t------ Ascendants -------------------" << endl;
+        DisplayPersonColumnTitles( "\t", "Distance" );
+        for(int i = 0; i < info.Ascendants.size(); ++i){
+            DisplayOnePersonInColumns( i, info.Ascendants[i].Ascendant,
+                                       "\t", std::to_string(info.Ascendants[i].Distance) );
+        }
     }
 }

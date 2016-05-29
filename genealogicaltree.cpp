@@ -2,6 +2,8 @@
 #include "genealogicaltree.h"
 #include "utils.h"
 #include <utility>
+#include <algorithm>
+#include <queue>
 
 GenealogicalTree::GenealogicalTree()
 {
@@ -35,7 +37,7 @@ GenealogicalTree::PersonPtr GenealogicalTree::AddPerson( Person person, Optional
     
 }
 
-void GenealogicalTree::SetParent(GenealogicalTree::PersonPtr person, Person parent)
+void GenealogicalTree::SetParent( GenealogicalTree::PersonPtr person, const Person& parent )
 {
     PersonPtr parent_ptr = FindPerson( parent.Name, parent.LastName, parent.Location, parent.BirthDate );
     
@@ -68,6 +70,13 @@ Persons GenealogicalTree::FindPersonByBirthDate( int year, int month, int day )
     return GetPersonsFromPersonPtrs( FindPersonPtrByBirthDate(year, month, day) );
 }
 
+Persons GenealogicalTree::GetPersonsFromPersonPtrs( GenealogicalTree::PersonPtrs ptrs )
+{
+    Persons persons;
+    std::for_each(ptrs.cbegin(), ptrs.cend(), [&](PersonPtr p){ persons.push_back(p->Info); });
+    return persons;
+}
+
 GenealogicalTree::PersonPtr GenealogicalTree::FindPerson( const String& name, const String& last_name,
                                                           const String& location, time_t birth_date )
 {
@@ -83,22 +92,96 @@ GenealogicalTree::PersonPtr GenealogicalTree::FindPerson( const String& name, co
     return nullptr;
 }
 
-GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByName(const String& name)
+GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByName( const String& name )
 {
     return FindPersonPtrByKey( NameMap, name );
 }
 
-GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByLastName(const String& last_name)
+GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByLastName( const String& last_name )
 {
     return FindPersonPtrByKey( LastNameMap, last_name );
 }
 
-GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByLocation(const String& location)
+GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByLocation( const String& location )
 {
     return FindPersonPtrByKey( LocationMap, location );
 }
 
-GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByBirthDate(int year, int month, int day)
+GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByBirthDate( int year, int month, int day )
 {
     return FindPersonPtrByKey( BirthDateMap, Utils::ConvertDateToCTime( Utils::Date{year, month, day} ) );
+}
+
+DescendantInfos GenealogicalTree::FindAllDescendantsForAllAscendants( const String& descendants_name,
+                                                                      const String& ascendants_name )
+{
+    PersonPtrs descendants = FindPersonPtrByName( descendants_name );
+    uint64_t visited_mask = 0;
+    
+    DescendantInfos result;
+    if( !descendants.empty() ) {
+        for( PersonPtr descendant: descendants ){
+            if( visited_mask == 0 ) {
+                ClearVisitedMasks();
+                visited_mask = 1;
+            }
+            
+            AscendantPtrs ascendants = FindAllAscendants( ascendants_name, descendant, visited_mask );
+            
+            AscendantInfos asc_infos;
+            std::for_each( ascendants.cbegin(), ascendants.cend(), [&](const AscendantPtr& asc){
+                asc_infos.emplace_back(asc.Ascendant->Info, asc.Distance);
+            } );
+            result.emplace_back( descendant->Info, asc_infos );
+            
+            visited_mask <<= 1;
+        }
+    }
+    return result;
+}
+
+//The BFS is being done here for each descendant to find all of his/her ascendants with the requested name.
+GenealogicalTree::AscendantPtrs GenealogicalTree::FindAllAscendants( String ascendants_name,
+                                                                  PersonPtr descendent,
+                                                                  uint64_t visited_mask )
+{
+    using Distance = uint32_t;
+    std::queue<PersonPtr>   ascendant_q;
+    std::queue<Distance>    distance_q;
+    auto push = [&]( PersonPtr person, Distance distance )
+    {
+        if( person && !(person->Visited & visited_mask) ) {
+            ascendant_q.push( person );
+            distance_q.push( distance );
+            person->Visited |= visited_mask;
+        }
+    };
+    auto pop = [&]() -> std::pair<PersonPtr, Distance>
+    {
+        std::pair<PersonPtr, uint32_t> res;
+        res.first = ascendant_q.front();    ascendant_q.pop();
+        res.second = distance_q.front();    distance_q.pop();
+        return res;
+    };
+    
+    push( descendent->Parent1, 1 );
+    push( descendent->Parent2, 1 );
+    
+    AscendantPtrs ascendants;
+    std::pair<PersonPtr, Distance> current;
+    while( !ascendant_q.empty() ) {
+        current = pop();
+        if( current.first->Info.Name == ascendants_name ) {
+            ascendants.emplace_back(current.first, current.second);
+        }
+        push( current.first->Parent1, current.second + 1 );
+        push( current.first->Parent2, current.second + 1 );
+    }
+    
+    return ascendants;
+}
+
+inline void GenealogicalTree::ClearVisitedMasks()
+{
+    std::for_each( NameMap.begin(), NameMap.end(), [](auto& pair){pair.second->Visited = 0;} );
 }

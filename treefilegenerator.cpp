@@ -323,10 +323,10 @@ const std::string Countries[100] =
     "United States",
 };
 
-void TreeFileGenerator::Generate( const std::string& path, int num_of_people )
+bool TreeFileGenerator::Generate( const std::string& path, int num_of_people )
 {
     if( num_of_people < 10 )
-        return;//too few people. :D
+        return false;//too few people. :D
 
     std::ofstream out;
     out.open( path );
@@ -362,7 +362,8 @@ void TreeFileGenerator::Generate( const std::string& path, int num_of_people )
             out << people[i] << ';' << people[p1] << ';' << people[p2] << std::endl;
         }
         out.close();
+        return true;
     } else {
-        std::cout << "ERROR: Output file openning failed.\n";
+        return false;
     }
 }
