@@ -11,7 +11,15 @@ TreeFileGenerator::TreeFileGenerator()
 
 }
 
-const std::string Names[100] =
+std::string TreeFileGenerator::GetLastError()
+{
+    std::string err_msg = std::move( LastError );
+    LastError.clear();
+    return err_msg;
+}
+
+const int NUM_OF_NAMES = 100;
+const std::string Names[NUM_OF_NAMES] =
 {
     "James",
     "John",
@@ -115,7 +123,7 @@ const std::string Names[100] =
     "Jean",
 };
 
-const std::string LastNames[100] =
+const std::string LastNames[NUM_OF_NAMES] =
 {
     "Smith",
     "Johnson",
@@ -219,7 +227,7 @@ const std::string LastNames[100] =
     "Hayes",
 };
 
-const std::string Countries[100] =
+const std::string Countries[NUM_OF_NAMES] =
 {
     "Germany",
     "Ghana",
@@ -332,17 +340,29 @@ inline std::ostream& operator<< (std::ostream& os, const Person& p)
 
 bool TreeFileGenerator::Generate( const std::string& path, int num_of_people )
 {
-    if( num_of_people < 10 )
-        return false;//too few people. :D
+    LastError.clear();
+    
+    if( num_of_people < GEN_MIN_PEOPLE_NUM ) {
+        LastError = "Too few people. Try more!";
+        return false;
+    }
 
     std::ofstream out;
     out.open( path );
-    if( ! out.bad() ) {
+    if( out.good() ) {
         out << "# Randomly generated data" << std::endl;
-        std::vector<Person> people(num_of_people);
+        std::vector<Person> people;
+        //Enhancement tip: It might worth using two much smaller vectors to store two group of people.
+        //                 and switch between them while choosing parents.
+        try {
+            people.reserve( num_of_people );
+        } catch(const std::bad_alloc& e) {
+            LastError = "Too many people. try less!";
+            return false;
+        }
         std::random_device rd;
         std::mt19937 gen(rd());
-        std::uniform_int_distribution<> dis(0, 99);
+        std::uniform_int_distribution<> dis(0, NUM_OF_NAMES-1);
         std::uniform_int_distribution<> dis_day(1, 28);
         std::uniform_int_distribution<> dis_mon(0, 11);
         std::uniform_int_distribution<> dis_year(1900, 2016);
@@ -371,6 +391,7 @@ bool TreeFileGenerator::Generate( const std::string& path, int num_of_people )
         out.close();
         return true;
     } else {
+        LastError = "File IO error!";
         return false;
     }
 }

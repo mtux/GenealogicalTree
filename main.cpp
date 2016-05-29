@@ -1,7 +1,7 @@
 
 #include "prompthandler.h"
 
-int main(int argc, char **argv)
+int main()
 {
     PromptHandler app;
     

@@ -1,6 +1,10 @@
 #ifndef UTILS_H
 #define UTILS_H
+
 #include <ctime>
+#include <string>
+#include <sstream>
+#include <algorithm>
 
 namespace Utils
 {
@@ -32,6 +36,22 @@ namespace Utils
         }
         return date;
     }
+    
+    inline void Trim(std::string &s) {
+        s.erase(s.begin(), std::find_if_not(s.begin(), s.end(), std::ptr_fun<int, int>(std::isspace)));
+        s.erase(std::find_if_not(s.rbegin(), s.rend(), std::ptr_fun<int, int>(std::isspace)).base(), s.end());
+    }
+    
+    inline std::vector<std::string> Split(const std::string &s, char delim) {
+        std::stringstream ss(s);
+        std::string item;
+        std::vector<std::string> elems;
+        while ( std::getline(ss, item, delim) ) {
+            elems.push_back( std::move(item) );
+        }
+        return elems;
+    }
+    
 }
 
 #endif

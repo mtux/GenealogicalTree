@@ -16,17 +16,32 @@ PromptHandler::PromptHandler()
 
 PromptHandler::~PromptHandler()
 {
+}
 
+const char* WRONG_INPUT_MESSAGE = "Wrong character! Please choose from menu.";
+
+inline void PromptHandler::DisplayMessage(const string& message)
+{
+    cout << "#### " << message << "\nPress enter to continue." << endl;
+    std::string tmp;
+    getline(cin, tmp);
+}
+
+inline void PromptHandler::DisplayErrorMessage(const string& error_message)
+{
+    cout << "**** ERROR => " << error_message << "\nPress enter to continue." << endl;
+    std::string tmp;
+    getline(cin, tmp);
 }
 
 int PromptHandler::EventLoop()
 {
     char cmd = 0;
-    string tmp;
+    string line;
     while ( cmd != 'q' ) {
         DisplayEventOptions();
-        cin >> cmd;
-        getline(cin, tmp);
+        getline(cin, line);
+        cmd = line[0];
         switch( cmd ) {
             case 'f':
                 FindPerson();
@@ -40,7 +55,10 @@ int PromptHandler::EventLoop()
             case 'g':
                 GenerateFile();
                 break;
+            case 'q':
+                break;
             default:
+                DisplayErrorMessage( WRONG_INPUT_MESSAGE );
                 break;
         }
     }
@@ -50,32 +68,47 @@ int PromptHandler::EventLoop()
 
 void PromptHandler::DisplayEventOptions()
 {
-    cout << "======================================================================" << endl;
+    cout << "\n\n======================================================================" << endl;
     cout << "What do you want to do?"   << endl;
     cout << "\t[f] Find a person"       << endl;
     cout << "\t[a] Find all descendants with name Bob for all ascendants with name Will" << endl;
     cout << "\t[l] Load a data file"    << endl;
     cout << "\t[g] Generate a random data file" << endl;
     cout << "\t[q] Quit"                << endl;
+    cout << '>';
 }
 
 void PromptHandler::GenerateFile()
 {
-    int num_of_people;
+    int num_of_people = 0;
+    string num_str;
     string path;
-    cout << "Number of People(10-1000000)? ";
-    cin >> num_of_people;
+    while( num_of_people < GEN_MIN_PEOPLE_NUM || num_of_people > GEN_MAX_PEOPLE_NUM ) {
+        cout << "Number of People("<< GEN_MIN_PEOPLE_NUM << '-' << GEN_MAX_PEOPLE_NUM << ")? ";
+        getline(cin, num_str);
+        try{
+            num_of_people = stoi( num_str );
+        } catch( const invalid_argument& e ) {
+            if( num_str[0] == 'c' )
+                return;
+            DisplayErrorMessage( "Not a number. Please try again or enter 'c' to Cancel" );
+        }        
+    }
     cout << "Path to create into? ";
-    ws(cin);
-    getline(cin, path);    
-    if ( ! path.empty() && num_of_people > 10 && num_of_people < 1000001 ) {
+    getline( cin, path );
+    Utils::Trim( path );
+    if ( ! path.empty() ) {
         TreeFileGenerator gen;
         const bool res = gen.Generate( path, num_of_people );
         if( res ) {
-            cout << "File \"" << path << "\" generated successfully." << endl;
+            const std::string msg = "File \"" + path + "\" generated successfully.";
+            DisplayMessage( msg );
         } else {
-            cout << "ERROR: File generation failed!\n";
+            const std::string err_msg = "File generation failed with the following error:\n\t" + gen.GetLastError();
+            DisplayErrorMessage( err_msg );
         }
+    } else {
+        DisplayMessage( "Path cannot be empty. Please try again later." );
     }
 }
 
@@ -83,78 +116,105 @@ void PromptHandler::LoadFile()
 {
     string path;
     cout << "Path to load? ";
-    ws(cin);
     getline(cin, path);
-    //TODO: Use filesystem::exists() to make sure the path is valid.
+    Utils::Trim(path);
     if ( ! path.empty() ) {
         TreeFileLoader loader( &Tree );
-        auto loaded = loader.LoadFile( path );
-        if( loaded )
-            cout << "File "<< path << " loaded properly." << endl;
-        else
-            cout << "Loading file " << path << " failed!" << endl;
+        const auto count = loader.LoadFile( path );
+        if( count >= 0 ) {
+            const std::string msg = to_string( count ) + " people loaded successfully.";
+            DisplayMessage( msg );
+        } else {
+            const std::string err_msg = "Loading file \"" + path + "\" failed!";
+            DisplayErrorMessage( err_msg );
+        }
+    } else {
+        DisplayErrorMessage( "Path cannot be empty. Please try again later." );
     }
 }
 
 void PromptHandler::FindPerson()
 {
-    cout << "------------------------------------------------" << endl;
-    cout << "By what criteria?" << endl;
-    cout << "\t[1] Name"        << endl;
-    cout << "\t[2] Last Name"   << endl;
-    cout << "\t[3] Location"    << endl;
-    cout << "\t[4] Birth Date"  << endl;
-    cout << "\t[q] *** Return"  << endl;
-    char ch;
-    cin >> ch;
-    switch( ch ) {
-        case '1':
-        {
-            cout << "Name? ";
-            string name;
-            ws(cin);
-            getline(cin, name);
-            if( !name.empty() ) {
-                auto res = Tree.FindPersonByName( name );
-                DisplayPersons( res );
+    bool repeat = true;
+    while( repeat ) {
+        repeat = false;
+        cout << "------------------------------------------------" << endl;
+        cout << "By what criteria?" << endl;
+        cout << "\t[1] Name"        << endl;
+        cout << "\t[2] Last Name"   << endl;
+        cout << "\t[3] Location"    << endl;
+        cout << "\t[4] Birth Date"  << endl;
+        cout << "\t[c] *** Cancel"  << endl;
+        cout << '>';
+        string line;
+        getline(cin, line);
+        switch( line[0] ) {
+            case '1':
+            {
+                cout << "Name? ";
+                string name;
+                getline(cin, name);
+                if( !name.empty() ) {
+                    auto res = Tree.FindPersonByName( name );
+                    DisplayPersons( res );
+                }
             }
-        }
-            break;
-        case '2':
-        {
-            cout << "Last Name? ";
-            string lname;
-            ws(cin);
-            getline(cin, lname);
-            if( !lname.empty() ) {
-                auto res = Tree.FindPersonByLastName( lname );
-                DisplayPersons( res );
+                break;
+            case '2':
+            {
+                cout << "Last Name? ";
+                string lname;
+                getline(cin, lname);
+                if( !lname.empty() ) {
+                    auto res = Tree.FindPersonByLastName( lname );
+                    DisplayPersons( res );
+                }
             }
-        }
-            break;
-        case '3':
-        {
-            cout << "Location? ";
-            string location;
-            ws(cin);
-            getline(cin, location);
-            if( !location.empty() ) {
-                auto res = Tree.FindPersonByLocation( location );
-                DisplayPersons( res );
+                break;
+            case '3':
+            {
+                cout << "Location? ";
+                string location;
+                getline(cin, location);
+                if( !location.empty() ) {
+                    auto res = Tree.FindPersonByLocation( location );
+                    DisplayPersons( res );
+                }
             }
+                break;
+            case '4':
+            {
+                cout << "Birthdate(yyyy mm dd)? ";
+                int year, month, day;
+                string date_str;
+                getline(cin, date_str);
+                auto strings = Utils::Split(date_str, ' ');
+                if( strings.size() >= 3 ) {
+                    try {
+                        year =  stoi( strings[0] );
+                        month = stoi( strings[1] );
+                        day   = stoi( strings[2] );
+                        auto res = Tree.FindPersonByBirthDate( year, month, day );
+                        DisplayPersons( res );
+                    } catch( const invalid_argument& e ) {
+                        DisplayErrorMessage( "Not a number. Please try again." );
+                        repeat = true;
+                    }
+                } else {
+                    DisplayErrorMessage( "Not enough numbers. Please try again." );
+                    repeat = true;
+                }
+            }
+                break;
+            case 'c':
+                repeat = false;
+                break;
+            default:
+                DisplayErrorMessage( WRONG_INPUT_MESSAGE );
+                repeat = true;
+                break;
         }
-            break;
-        case '4':
-        {
-            cout << "Birthdate(yyyy mm dd)? ";
-            int year, month, day;
-            cin >> year >> month >> day;
-            auto res = Tree.FindPersonByBirthDate( year, month, day );
-            DisplayPersons( res );
-        }
-            break;
-        case 'q':
-            break;
+        
     }
 }
 
@@ -166,10 +226,13 @@ const int DATE_WIDTH = 15;
 const int TRAILING_WIDTH = 10;
 void PromptHandler::DisplayPersons(const Persons& persons)
 {
-    DisplayPersonColumnTitles();
-    for( int i = 0; i < persons.size(); ++i ) {
-        DisplayOnePersonInColumns( i, persons[i] );
-
+    if( persons.empty() ) {
+        DisplayMessage( "No one found." );
+    } else {
+        DisplayPersonColumnTitles();
+        for( int i = 0; i < persons.size(); ++i ) {
+            DisplayOnePersonInColumns( i, persons[i] );
+        }
     }
 }
 
@@ -204,11 +267,11 @@ void PromptHandler::FindAllDescendantsForAllAscendants()
 {
     string descendant_name, ascendant_name;
     cout << "Descendants' Name(press enter to use name \"Bob\")? ";
-    ws(cin);
     getline(cin, descendant_name);
     cout << "Ascendants' Name(press enter to use name \"Will\")? ";
     getline(cin, ascendant_name);
-    //TODO: trim input strings
+    Utils::Trim( descendant_name );
+    Utils::Trim( ascendant_name  );
     if( descendant_name.empty() )
         descendant_name = "Bob";
     if( ascendant_name.empty() )
@@ -216,15 +279,19 @@ void PromptHandler::FindAllDescendantsForAllAscendants()
     
     DescendantInfos all = Tree.FindAllDescendantsForAllAscendants( descendant_name, ascendant_name );
     
-    for_each( all.cbegin(), all.cend(), [&](const DescendantInfo& d) { DisplayDescendantInfo( d ); } );
+    if( !all.empty() ) {
+        for_each( all.cbegin(), all.cend(), [&](const DescendantInfo& d) { DisplayDescendantInfo( d ); } );
+    } else {
+        DisplayMessage( "No one with the specified names found." );
+    }
 }
 
 void PromptHandler::DisplayDescendantInfo(const DescendantInfo& info)
 {
-    cout << "+++++++++++++++++++++++++++++++++++++" << endl;
+    cout << "\n+++++++++++++++++++++++++++++++++++++" << endl;
     DisplayOnePersonInColumns( -1, info.Descendant );
     if( info.Ascendants.empty() ) {
-        cout << "\tNo ascendant with the requested name found!";
+        cout << "\tHas no ascendant with the requested name!" << endl;
     } else {
         cout << "\t------ Ascendants -------------------" << endl;
         DisplayPersonColumnTitles( "\t", "Distance" );

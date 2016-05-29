@@ -14,6 +14,9 @@ public:
     int EventLoop();
     
 private:
+    void DisplayMessage( const std::string& message);
+    void DisplayErrorMessage( const std::string& error_message );
+    
     void GenerateFile();
     void LoadFile();
     void FindPerson();

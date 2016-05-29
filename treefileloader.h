@@ -10,13 +10,16 @@ class TreeFileLoader
 public:
     TreeFileLoader( GenealogicalTree* tree );
 
-    bool LoadFile( const std::string& path );
+    int64_t LoadFile( const std::string& path );
 
+    std::string GetLastError();
+    
 private:
-    void LoadPerson(const std::string& line);
+    bool LoadPerson(const std::string& line);
     bool ReadOnePerson(const std::string& line , Person &p);
 
     GenealogicalTree* Tree;
+    std::string LastError;
 };
 
 #endif // FILELOADER_H

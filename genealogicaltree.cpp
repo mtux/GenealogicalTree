@@ -32,10 +32,10 @@ GenealogicalTree::PersonPtr GenealogicalTree::AddPersonImpl( const Person& perso
     auto person_node = std::make_shared<PersonNode>( person );
     
     if( person_node ) {
-        NameMap.insert(      std::make_pair(person.Name,      person_node) );
-        LastNameMap.insert(  std::make_pair(person.LastName,  person_node) );
-        LocationMap.insert(  std::make_pair(person.Location,  person_node) );
-        BirthDateMap.insert( std::make_pair(person.BirthDate, person_node) );
+        NameMap.insert(      std::make_pair(person.Name,      person_node ) );
+        LastNameMap.insert(  std::make_pair(person.LastName,  person_node ) );
+        LocationMap.insert(  std::make_pair(person.Location,  person_node ) );
+        BirthDateMap.insert( std::make_pair(person.BirthDate, person_node ) );
         
         if( parent1 )
             SetParent( person_node, parent1.value() );

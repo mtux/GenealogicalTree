@@ -1,7 +1,7 @@
 #include "treefileloader.h"
+#include "utils.h"
 
 #include <fstream>
-#include <sstream>
 #include <vector>
 #include <ctime>
 
@@ -10,36 +10,35 @@ TreeFileLoader::TreeFileLoader( GenealogicalTree *tree )
 {
 }
 
-inline std::vector<std::string> split(const std::string &s, char delim) {
-    std::stringstream ss(s);
-    std::string item;
-    std::vector<std::string> elems;
-    while (std::getline(ss, item, delim)) {
-        elems.push_back(item);
-    }
-    return elems;
+std::string TreeFileLoader::GetLastError()
+{
+    std::string tmp = std::move( LastError );
+    LastError.clear();
+    return tmp;
 }
 
-bool TreeFileLoader::LoadFile( const std::string& path )
+int64_t TreeFileLoader::LoadFile( const std::string& path )
 {
     std::ifstream input(path);
     if( input.good() ) {
         std::string line;
+        int64_t count = 0;
         while( input.good() ){
             std::getline(input, line);
-            if( line.size() > 0 && line[0] != '#' ) {
-                LoadPerson(line);
+            if( line.size() > 1 && line[0] != '#' ) {
+                count += LoadPerson(line) ? 1 : 0;
             }
         }
-        return true;
+        return count;
     } else {
-        return false;
+        LastError = "Cannot find or open the specified file.";
+        return -1;
     }
 }
 
-void TreeFileLoader::LoadPerson(const std::string& line)
+bool TreeFileLoader::LoadPerson(const std::string& line)
 {
-    auto persons = split(line, ';');
+    auto persons = Utils::Split(line, ';');
     int parent_count = persons.size() - 1;
     Person p;
     if( ReadOnePerson( persons[0], p ) ) {
@@ -49,12 +48,15 @@ void TreeFileLoader::LoadPerson(const std::string& line)
         if( parent_count >= 2 )
             ReadOnePerson( persons[2], p2 );
         Tree->AddPerson(p, p1, p2);
+        return true;
+    } else {
+        return false;
     }
 }
 
 bool TreeFileLoader::ReadOnePerson( const std::string& line, Person& p )
 {
-    auto elems = split(line, ':');
+    auto elems = Utils::Split(line, ':');
     if( elems.size() >= 3 ) {
         p.Name = elems[0];
         p.LastName = elems[1];
