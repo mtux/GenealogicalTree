@@ -25,6 +25,19 @@ bool GenealogicalTree::AddPerson( const Person& person, OptionalPerson parent1, 
         return false;
 }
 
+template<typename MapType, typename KeyType, typename ValueType>
+void RemoveItem(MapType& map, KeyType key, ValueType value)
+{
+    auto it = map.lower_bound(key);
+    while ( it != map.end() && (*it).first == key ) {
+        if ( (*it).second == value ) {
+            map.erase(it);
+            break;
+        }
+        ++it;
+    }
+}
+
 GenealogicalTree::PersonPtr GenealogicalTree::AddPersonImpl( const Person& person,
                                                              OptionalPerson parent1,
                                                              OptionalPerson parent2 )
@@ -32,20 +45,28 @@ GenealogicalTree::PersonPtr GenealogicalTree::AddPersonImpl( const Person& perso
     auto person_node = std::make_shared<PersonNode>( person );
     
     if( person_node ) {
-        NameMap.insert(      std::make_pair(person.Name,      person_node ) );
-        LastNameMap.insert(  std::make_pair(person.LastName,  person_node ) );
-        LocationMap.insert(  std::make_pair(person.Location,  person_node ) );
-        BirthDateMap.insert( std::make_pair(person.BirthDate, person_node ) );
+        auto n_res  = NameMap.insert(      std::make_pair(person.Name,      person_node ) );
+        auto ln_res = LastNameMap.insert(  std::make_pair(person.LastName,  person_node ) );
+        auto l_res  = LocationMap.insert(  std::make_pair(person.Location,  person_node ) );
+        auto bd_res = BirthDateMap.insert( std::make_pair(person.BirthDate, person_node ) );
         
-        if( parent1 )
-            SetParent( person_node, parent1.value() );
-        if( parent2 )
-            SetParent( person_node, parent2.value() );
-        
-        return person_node;
-    } else {
-        return nullptr;        
+        if ( n_res != NameMap.end()     && ln_res != LastNameMap.end() &&
+             l_res != LocationMap.end() && bd_res != BirthDateMap.end() ) {
+            if( parent1 )
+                SetParent( person_node, parent1.value() );
+            if( parent2 )
+                SetParent( person_node, parent2.value() );
+            
+            return person_node;
+        } else {
+            //There was an error, so roll back changes
+            RemoveItem( NameMap,      person.Name,      person_node );
+            RemoveItem( LastNameMap,  person.LastName,  person_node );
+            RemoveItem( LocationMap,  person.Location,  person_node );
+            RemoveItem( BirthDateMap, person.BirthDate, person_node );
+        }
     }
+    return nullptr;
 }
 
 void GenealogicalTree::SetParent( GenealogicalTree::PersonPtr person, const Person& parent )

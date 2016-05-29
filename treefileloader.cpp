@@ -47,8 +47,8 @@ bool TreeFileLoader::LoadPerson(const std::string& line)
             ReadOnePerson( persons[1], p1 );
         if( parent_count >= 2 )
             ReadOnePerson( persons[2], p2 );
-        Tree->AddPerson(p, p1, p2);
-        return true;
+        
+        return Tree->AddPerson(p, p1, p2);
     } else {
         return false;
     }
