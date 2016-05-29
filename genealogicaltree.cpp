@@ -1,6 +1,7 @@
 
 #include "genealogicaltree.h"
 #include "utils.h"
+
 #include <utility>
 #include <algorithm>
 #include <queue>
@@ -50,17 +51,17 @@ void GenealogicalTree::SetParent( GenealogicalTree::PersonPtr person, const Pers
         person->Parent2 = parent_ptr;
 }
 
-Persons GenealogicalTree::FindPersonByName( const String& name )
+Persons GenealogicalTree::FindPersonByName( const std::string& name )
 {
     return GetPersonsFromPersonPtrs( FindPersonPtrByName(name) );
 }
 
-Persons GenealogicalTree::FindPersonByLastName( const String& last_name )
+Persons GenealogicalTree::FindPersonByLastName( const std::string& last_name )
 {
     return GetPersonsFromPersonPtrs( FindPersonPtrByLastName(last_name) );
 }
 
-Persons GenealogicalTree::FindPersonByLocation( const String& location )
+Persons GenealogicalTree::FindPersonByLocation( const std::string& location )
 {
     return GetPersonsFromPersonPtrs( FindPersonPtrByLocation(location) );
 }
@@ -77,8 +78,8 @@ Persons GenealogicalTree::GetPersonsFromPersonPtrs( GenealogicalTree::PersonPtrs
     return persons;
 }
 
-GenealogicalTree::PersonPtr GenealogicalTree::FindPerson( const String& name, const String& last_name,
-                                                          const String& location, time_t birth_date )
+GenealogicalTree::PersonPtr GenealogicalTree::FindPerson( const std::string& name, const std::string& last_name,
+                                                          const std::string& location, time_t birth_date )
 {
     auto matched_people = FindPersonPtrByName( name );
     for( const PersonPtr& person: matched_people ) {
@@ -92,17 +93,17 @@ GenealogicalTree::PersonPtr GenealogicalTree::FindPerson( const String& name, co
     return nullptr;
 }
 
-GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByName( const String& name )
+GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByName( const std::string& name )
 {
     return FindPersonPtrByKey( NameMap, name );
 }
 
-GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByLastName( const String& last_name )
+GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByLastName( const std::string& last_name )
 {
     return FindPersonPtrByKey( LastNameMap, last_name );
 }
 
-GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByLocation( const String& location )
+GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByLocation( const std::string& location )
 {
     return FindPersonPtrByKey( LocationMap, location );
 }
@@ -112,8 +113,8 @@ GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByBirthDate( int yea
     return FindPersonPtrByKey( BirthDateMap, Utils::ConvertDateToCTime( Utils::Date{year, month, day} ) );
 }
 
-DescendantInfos GenealogicalTree::FindAllDescendantsForAllAscendants( const String& descendants_name,
-                                                                      const String& ascendants_name )
+DescendantInfos GenealogicalTree::FindAllDescendantsForAllAscendants( const std::string& descendants_name,
+                                                                      const std::string& ascendants_name )
 {
     PersonPtrs descendants = FindPersonPtrByName( descendants_name );
     uint64_t visited_mask = 0;
@@ -141,7 +142,7 @@ DescendantInfos GenealogicalTree::FindAllDescendantsForAllAscendants( const Stri
 }
 
 //The BFS is being done here for each descendant to find all of his/her ascendants with the requested name.
-GenealogicalTree::AscendantPtrs GenealogicalTree::FindAllAscendants( String ascendants_name,
+GenealogicalTree::AscendantPtrs GenealogicalTree::FindAllAscendants( std::string ascendants_name,
                                                                   PersonPtr descendent,
                                                                   uint64_t visited_mask )
 {
@@ -158,7 +159,7 @@ GenealogicalTree::AscendantPtrs GenealogicalTree::FindAllAscendants( String asce
     };
     auto pop = [&]() -> std::pair<PersonPtr, Distance>
     {
-        std::pair<PersonPtr, uint32_t> res;
+        std::pair<PersonPtr, Distance> res;
         res.first = ascendant_q.front();    ascendant_q.pop();
         res.second = distance_q.front();    distance_q.pop();
         return res;

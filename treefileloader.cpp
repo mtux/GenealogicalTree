@@ -1,4 +1,5 @@
 #include "treefileloader.h"
+
 #include <fstream>
 #include <sstream>
 #include <vector>
@@ -23,7 +24,7 @@ bool TreeFileLoader::LoadFile( const std::string& path )
 {
     std::ifstream input(path);
     if( input.good() ) {
-        String line;
+        std::string line;
         while( input.good() ){
             std::getline(input, line);
             if( line.size() > 0 && line[0] != '#' ) {
@@ -36,7 +37,7 @@ bool TreeFileLoader::LoadFile( const std::string& path )
     }
 }
 
-void TreeFileLoader::LoadPerson(String line)
+void TreeFileLoader::LoadPerson(const std::string& line)
 {
     auto persons = split(line, ';');
     int parent_count = persons.size() - 1;

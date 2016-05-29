@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <algorithm>
 
 using namespace std;
 
@@ -21,9 +22,9 @@ PromptHandler::~PromptHandler()
 int PromptHandler::EventLoop()
 {
     char cmd = 0;
-    String tmp;
+    string tmp;
     while ( cmd != 'q' ) {
-        DisplayEventOptions();        
+        DisplayEventOptions();
         cin >> cmd;
         getline(cin, tmp);
         switch( cmd ) {
@@ -172,7 +173,7 @@ void PromptHandler::DisplayPersons(const Persons& persons)
     }
 }
 
-void PromptHandler::DisplayPersonColumnTitles(const String& leading_text, const String& trailing_text)
+void PromptHandler::DisplayPersonColumnTitles(const std::string& leading_text, const std::string& trailing_text)
 {
     cout << leading_text;
     cout << left << setw(NUM_WIDTH)      << "#"
@@ -184,10 +185,10 @@ void PromptHandler::DisplayPersonColumnTitles(const String& leading_text, const 
 }
 
 void PromptHandler::DisplayOnePersonInColumns(int row_num, const Person& person,
-                                              const String& leading_text, const String& trailing_text)
+                                              const std::string& leading_text, const std::string& trailing_text)
 {
-    auto date = Utils::ConvertCTimeToDate( person.BirthDate );
-    String date_str = to_string(date.Year) + '-' + to_string(date.Month) + '-' + to_string(date.Day);
+    auto date = person.GetBirthDate();
+    std::string date_str = to_string(date.Year) + '-' + to_string(date.Month) + '-' + to_string(date.Day);
     cout << leading_text;
     if( row_num != -1 ) {
         cout << left << setw(NUM_WIDTH)      << row_num;
@@ -202,10 +203,10 @@ void PromptHandler::DisplayOnePersonInColumns(int row_num, const Person& person,
 void PromptHandler::FindAllDescendantsForAllAscendants()
 {
     string descendant_name, ascendant_name;
-    cout << "\"Bob\"'s Name(press enter to use name \"Bob\")? ";
+    cout << "Descendants' Name(press enter to use name \"Bob\")? ";
     ws(cin);
     getline(cin, descendant_name);
-    cout << "\"Will\"'s Name(press enter to use name \"Will\")? ";
+    cout << "Ascendants' Name(press enter to use name \"Will\")? ";
     getline(cin, ascendant_name);
     //TODO: trim input strings
     if( descendant_name.empty() )
@@ -215,12 +216,10 @@ void PromptHandler::FindAllDescendantsForAllAscendants()
     
     DescendantInfos all = Tree.FindAllDescendantsForAllAscendants( descendant_name, ascendant_name );
     
-    for( int i = 0; i < all.size(); ++i ){
-        DisplayDescendantInfo( i, all[i] );
-    }
+    for_each( all.cbegin(), all.cend(), [&](const DescendantInfo& d) { DisplayDescendantInfo( d ); } );
 }
 
-void PromptHandler::DisplayDescendantInfo(int num, const DescendantInfo& info)
+void PromptHandler::DisplayDescendantInfo(const DescendantInfo& info)
 {
     cout << "+++++++++++++++++++++++++++++++++++++" << endl;
     DisplayOnePersonInColumns( -1, info.Descendant );

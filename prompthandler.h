@@ -1,8 +1,9 @@
 #ifndef PROMPTHANDLER_H
 #define PROMPTHANDLER_H
 
-#include <string>
 #include "genealogicaltree.h"
+
+#include <string>
 
 class PromptHandler
 {
@@ -20,10 +21,12 @@ private:
     
     void DisplayEventOptions();
     void DisplayPersons( const Persons& persons );
-    void DisplayDescendantInfo(int num, const DescendantInfo& info);
-    void DisplayPersonColumnTitles(const String& leading_text = String(), const String& trailing_text = String());
+    void DisplayDescendantInfo(const DescendantInfo& info);
+    void DisplayPersonColumnTitles(const std::string& leading_text = std::string(),
+                                   const std::string& trailing_text = std::string());
     void DisplayOnePersonInColumns(int row_num, const Person& person,
-                                   const String& leading_text = String(), const String& trailing_text = String());
+                                   const std::string& leading_text = std::string(),
+                                   const std::string& trailing_text = std::string());
     
     GenealogicalTree Tree;
 };

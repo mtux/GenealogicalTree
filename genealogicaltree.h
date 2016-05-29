@@ -12,18 +12,16 @@
 #include <memory>
 #include <experimental/optional>
 
-using String = std::string;
-
 struct Person
 {
     Person() : BirthDate(-1) {}
-    Person(const String& name, const String& l_name, const String& location, time_t b_day)
+    Person(const std::string& name, const std::string& l_name, const std::string& location, time_t b_day)
     :Name(name), LastName(l_name), Location(location), BirthDate(b_day)
     {}
     
-    String  Name;
-    String  LastName;
-    String  Location;
+    std::string  Name;
+    std::string  LastName;
+    std::string  Location;
     time_t  BirthDate;
     
     void SetBirthDate( Utils::Date date )
@@ -74,12 +72,12 @@ public:
     PersonPtr AddPerson( Person person, OptionalPerson parent1 = OptionalPerson(),
                                         OptionalPerson parent2 = OptionalPerson() );
     
-    Persons FindPersonByName( const String& name );
-    Persons FindPersonByLastName( const String& last_name );
-    Persons FindPersonByLocation( const String& location );
+    Persons FindPersonByName( const std::string& name );
+    Persons FindPersonByLastName( const std::string& last_name );
+    Persons FindPersonByLocation( const std::string& location );
     Persons FindPersonByBirthDate( int year, int month, int day );
     
-    DescendantInfos FindAllDescendantsForAllAscendants( const String& descendants_name, const String& ascendants_name );
+    DescendantInfos FindAllDescendantsForAllAscendants( const std::string& descendants_name, const std::string& ascendants_name );
     
     GenealogicalTree(const GenealogicalTree& other) = delete;
     GenealogicalTree& operator=(const GenealogicalTree& other) = delete;
@@ -101,18 +99,18 @@ private:
     };
     
     //TODO: Replace "std map" with a homemade "balanced binary search tree" if required.    
-    std::multimap<String, PersonPtr> NameMap;
-    std::multimap<String, PersonPtr> LastNameMap;
-    std::multimap<String, PersonPtr> LocationMap;
+    std::multimap<std::string, PersonPtr> NameMap;
+    std::multimap<std::string, PersonPtr> LastNameMap;
+    std::multimap<std::string, PersonPtr> LocationMap;
     std::multimap<time_t, PersonPtr> BirthDateMap;
     
     void SetParent( GenealogicalTree::PersonPtr person, const Person& parent );
     
-    PersonPtr FindPerson( const String& name, const String& last_name, const String& location, time_t birth_date = -1 );
+    PersonPtr FindPerson( const std::string& name, const std::string& last_name, const std::string& location, time_t birth_date = -1 );
     
-    PersonPtrs FindPersonPtrByName( const String& name );
-    PersonPtrs FindPersonPtrByLastName( const String& last_name );
-    PersonPtrs FindPersonPtrByLocation( const String& location );
+    PersonPtrs FindPersonPtrByName( const std::string& name );
+    PersonPtrs FindPersonPtrByLastName( const std::string& last_name );
+    PersonPtrs FindPersonPtrByLocation( const std::string& location );
     PersonPtrs FindPersonPtrByBirthDate( int year, int month, int day );
     
     Persons GetPersonsFromPersonPtrs( PersonPtrs ptrs );
@@ -126,7 +124,7 @@ private:
         uint32_t    Distance;
     };
     using AscendantPtrs = std::vector<AscendantPtr>;
-    AscendantPtrs FindAllAscendants(String ascendants_name, PersonPtr descendent, uint64_t visited_mask);
+    AscendantPtrs FindAllAscendants(std::string ascendants_name, PersonPtr descendent, uint64_t visited_mask);
     
     template<typename MapType, typename KeyType>
     PersonPtrs FindPersonPtrByKey(const MapType& map, KeyType key)

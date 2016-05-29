@@ -13,7 +13,7 @@ public:
     bool LoadFile( const std::string& path );
 
 private:
-    void LoadPerson(String line);
+    void LoadPerson(const std::string& line);
     bool ReadOnePerson(const std::string& line , Person &p);
 
     GenealogicalTree* Tree;
