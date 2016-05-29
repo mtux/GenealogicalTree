@@ -16,10 +16,21 @@ GenealogicalTree::~GenealogicalTree()
 
 }
 
-GenealogicalTree::PersonPtr GenealogicalTree::AddPerson( Person person, OptionalPerson parent1, OptionalPerson parent2 )
+bool GenealogicalTree::AddPerson( const Person& person, OptionalPerson parent1, OptionalPerson parent2 )
+{
+    auto res = AddPersonImpl( person, parent1, parent2 );
+    if( res )
+        return true;
+    else
+        return false;
+}
+
+GenealogicalTree::PersonPtr GenealogicalTree::AddPersonImpl( const Person& person,
+                                                             OptionalPerson parent1,
+                                                             OptionalPerson parent2 )
 {
     auto person_node = std::make_shared<PersonNode>( person );
-
+    
     if( person_node ) {
         NameMap.insert(      std::make_pair(person.Name,      person_node) );
         LastNameMap.insert(  std::make_pair(person.LastName,  person_node) );
@@ -35,7 +46,6 @@ GenealogicalTree::PersonPtr GenealogicalTree::AddPerson( Person person, Optional
     } else {
         return nullptr;        
     }
-    
 }
 
 void GenealogicalTree::SetParent( GenealogicalTree::PersonPtr person, const Person& parent )
@@ -43,7 +53,7 @@ void GenealogicalTree::SetParent( GenealogicalTree::PersonPtr person, const Pers
     PersonPtr parent_ptr = FindPerson( parent.Name, parent.LastName, parent.Location, parent.BirthDate );
     
     if ( ! parent_ptr )
-        parent_ptr = AddPerson( parent );
+        parent_ptr = AddPersonImpl( parent );
     
     if ( ! person->Parent1 )
         person->Parent1 = parent_ptr;
@@ -117,7 +127,7 @@ DescendantInfos GenealogicalTree::FindAllDescendantsForAllAscendants( const std:
                                                                       const std::string& ascendants_name )
 {
     PersonPtrs descendants = FindPersonPtrByName( descendants_name );
-    uint64_t visited_mask = 0;
+    VisitedFlags visited_mask = 0;
     
     DescendantInfos result;
     if( !descendants.empty() ) {
@@ -130,8 +140,8 @@ DescendantInfos GenealogicalTree::FindAllDescendantsForAllAscendants( const std:
             AscendantPtrs ascendants = FindAllAscendants( ascendants_name, descendant, visited_mask );
             
             AscendantInfos asc_infos;
-            std::for_each( ascendants.cbegin(), ascendants.cend(), [&](const AscendantPtr& asc){
-                asc_infos.emplace_back(asc.Ascendant->Info, asc.Distance);
+            std::for_each( ascendants.cbegin(), ascendants.cend(), [&](const std::pair<PersonPtr, Distance>& asc){
+                asc_infos.emplace_back(asc.first->Info, asc.second);
             } );
             result.emplace_back( descendant->Info, asc_infos );
             
@@ -142,11 +152,10 @@ DescendantInfos GenealogicalTree::FindAllDescendantsForAllAscendants( const std:
 }
 
 //The BFS is being done here for each descendant to find all of his/her ascendants with the requested name.
-GenealogicalTree::AscendantPtrs GenealogicalTree::FindAllAscendants( std::string ascendants_name,
-                                                                  PersonPtr descendent,
-                                                                  uint64_t visited_mask )
+GenealogicalTree::AscendantPtrs GenealogicalTree::FindAllAscendants( const std::string& ascendants_name,
+                                                                     PersonPtr descendent,
+                                                                     VisitedFlags visited_mask )
 {
-    using Distance = uint32_t;
     std::queue<PersonPtr>   ascendant_q;
     std::queue<Distance>    distance_q;
     auto push = [&]( PersonPtr person, Distance distance )
@@ -173,7 +182,7 @@ GenealogicalTree::AscendantPtrs GenealogicalTree::FindAllAscendants( std::string
     while( !ascendant_q.empty() ) {
         current = pop();
         if( current.first->Info.Name == ascendants_name ) {
-            ascendants.emplace_back(current.first, current.second);
+            ascendants.push_back( current );
         }
         push( current.first->Parent1, current.second + 1 );
         push( current.first->Parent2, current.second + 1 );

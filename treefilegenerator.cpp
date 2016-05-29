@@ -323,6 +323,13 @@ const std::string Countries[100] =
     "United States",
 };
 
+inline std::ostream& operator<< (std::ostream& os, const Person& p)
+{
+    auto date = p.GetBirthDate();
+    os << p.Name << ':' << p.LastName << ':' << p.Location << ':' << date.Year << ':' << date.Month << ':' << date.Day;
+    return os;
+}
+
 bool TreeFileGenerator::Generate( const std::string& path, int num_of_people )
 {
     if( num_of_people < 10 )

@@ -22,7 +22,7 @@ struct Person
     std::string  Name;
     std::string  LastName;
     std::string  Location;
-    time_t  BirthDate;
+    time_t       BirthDate;
     
     void SetBirthDate( Utils::Date date )
     {
@@ -34,13 +34,6 @@ struct Person
     }
 };
 
-inline std::ostream& operator<< (std::ostream& os, const Person& p)
-{
-    auto date = p.GetBirthDate();
-    os << p.Name << ':' << p.LastName << ':' << p.Location << ':' << date.Year << ':' << date.Month << ':' << date.Day;
-    return os;
-}
-
 using Persons = std::vector<Person>;
 using OptionalPerson = std::experimental::optional<Person>;
 
@@ -51,6 +44,7 @@ struct AscendantInfo
     uint32_t    Distance;
 };
 using AscendantInfos = std::vector<AscendantInfo>;
+
 struct DescendantInfo
 {
     DescendantInfo(Person desc, AscendantInfos ascendants): Descendant(desc), Ascendants(ascendants){}
@@ -61,16 +55,13 @@ using DescendantInfos = std::vector<DescendantInfo>;
 
 class GenealogicalTree
 {
-    struct PersonNode;
-    using PersonPtr = std::shared_ptr<PersonNode>;
-    using PersonPtrs = std::vector<PersonPtr>;
     
 public:
     GenealogicalTree();
     ~GenealogicalTree();
     
-    PersonPtr AddPerson( Person person, OptionalPerson parent1 = OptionalPerson(),
-                                        OptionalPerson parent2 = OptionalPerson() );
+    bool AddPerson( const Person& person, OptionalPerson parent1 = OptionalPerson(),
+                    OptionalPerson parent2 = OptionalPerson() );
     
     Persons FindPersonByName( const std::string& name );
     Persons FindPersonByLastName( const std::string& last_name );
@@ -84,6 +75,11 @@ public:
     bool operator==(const GenealogicalTree& other) = delete;
     
 private:
+    struct PersonNode;
+    using PersonPtr = std::shared_ptr<PersonNode>;
+    using PersonPtrs = std::vector<PersonPtr>;
+    using VisitedFlags = uint64_t;
+    
     //TODO: Performance tip: It might worth having a pool and a factory to create and keep PersonNodes together.
     struct PersonNode
     {
@@ -92,7 +88,7 @@ private:
         Person      Info;
         
         //This will be used in BFS.
-        uint64_t    Visited;// Why do we use a 64bit integer where a boolean should suffic? because clearing this bit in all the graph is expensive during search for all descendants of all ascendants. This way we will be using all the 64 bits before a need to clear arise. Thus, only clear after 64 searches.
+        VisitedFlags Visited;// Why do we use a 64bit integer where a boolean should suffic? because clearing this bit in all the graph is expensive during search for all descendants of all ascendants. This way we will be using all the 64 bits before a need to clear arise. Thus, only clear after 64 searches.
         
         PersonPtr   Parent1 = nullptr;
         PersonPtr   Parent2 = nullptr;
@@ -102,11 +98,15 @@ private:
     std::multimap<std::string, PersonPtr> NameMap;
     std::multimap<std::string, PersonPtr> LastNameMap;
     std::multimap<std::string, PersonPtr> LocationMap;
-    std::multimap<time_t, PersonPtr> BirthDateMap;
+    std::multimap<time_t, PersonPtr>      BirthDateMap;
+    
+    PersonPtr AddPersonImpl( const Person& person, OptionalPerson parent1 = OptionalPerson(),
+                             OptionalPerson parent2 = OptionalPerson() );
     
     void SetParent( GenealogicalTree::PersonPtr person, const Person& parent );
     
-    PersonPtr FindPerson( const std::string& name, const std::string& last_name, const std::string& location, time_t birth_date = -1 );
+    PersonPtr FindPerson( const std::string& name, const std::string& last_name,
+                          const std::string& location, time_t birth_date = -1 );
     
     PersonPtrs FindPersonPtrByName( const std::string& name );
     PersonPtrs FindPersonPtrByLastName( const std::string& last_name );
@@ -117,14 +117,9 @@ private:
     
     void ClearVisitedMasks();
     
-    struct AscendantPtr
-    {
-        AscendantPtr(PersonPtr asc, uint32_t dis): Ascendant(asc), Distance(dis){}
-        PersonPtr   Ascendant;
-        uint32_t    Distance;
-    };
-    using AscendantPtrs = std::vector<AscendantPtr>;
-    AscendantPtrs FindAllAscendants(std::string ascendants_name, PersonPtr descendent, uint64_t visited_mask);
+    using Distance = uint32_t;
+    using AscendantPtrs = std::vector< std::pair<PersonPtr, Distance> >;
+    AscendantPtrs FindAllAscendants(const std::string& ascendants_name, PersonPtr descendent, VisitedFlags visited_mask);
     
     template<typename MapType, typename KeyType>
     PersonPtrs FindPersonPtrByKey(const MapType& map, KeyType key)
