@@ -10,7 +10,6 @@
 #include <map>
 #include <vector>
 #include <memory>
-#include <experimental/optional>
 
 struct Person
 {
@@ -35,7 +34,6 @@ struct Person
 };
 
 using Persons = std::vector<Person>;
-using OptionalPerson = std::experimental::optional<Person>;
 
 struct AscendantInfo
 {
@@ -60,8 +58,9 @@ public:
     GenealogicalTree();
     ~GenealogicalTree();
     
-    bool AddPerson( const Person& person, OptionalPerson parent1 = OptionalPerson(),
-                    OptionalPerson parent2 = OptionalPerson() );
+    bool AddPerson( const Person& person );
+    bool AddPerson( const Person& person, const Person& parent1 );
+    bool AddPerson( const Person& person, const Person& parent1, const Person& parent2 );
     
     Persons FindPersonByName( const std::string& name );
     Persons FindPersonByLastName( const std::string& last_name );
@@ -100,8 +99,9 @@ private:
     std::multimap<std::string, PersonPtr> LocationMap;
     std::multimap<time_t, PersonPtr>      BirthDateMap;
     
-    PersonPtr AddPersonImpl( const Person& person, OptionalPerson parent1 = OptionalPerson(),
-                             OptionalPerson parent2 = OptionalPerson() );
+    PersonPtr AddPersonImpl( const Person& person );
+    PersonPtr AddPersonImpl( const Person& person, const Person& parent1 );
+    PersonPtr AddPersonImpl( const Person& person, const Person& parent1, const Person& parent2 );
     
     void SetParent( GenealogicalTree::PersonPtr person, const Person& parent );
     

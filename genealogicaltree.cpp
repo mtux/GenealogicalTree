@@ -16,13 +16,19 @@ GenealogicalTree::~GenealogicalTree()
 
 }
 
-bool GenealogicalTree::AddPerson( const Person& person, OptionalPerson parent1, OptionalPerson parent2 )
+bool GenealogicalTree::AddPerson(const Person& person)
 {
-    auto res = AddPersonImpl( person, parent1, parent2 );
-    if( res )
-        return true;
-    else
-        return false;
+    return AddPersonImpl( person ) != nullptr;
+}
+
+bool GenealogicalTree::AddPerson(const Person& person, const Person& parent1)
+{
+    return AddPersonImpl( person, parent1 ) != nullptr;
+}
+
+bool GenealogicalTree::AddPerson( const Person& person, const Person& parent1, const Person& parent2 )
+{
+    return AddPersonImpl( person, parent1, parent2 ) != nullptr;
 }
 
 template<typename MapType, typename KeyType, typename ValueType>
@@ -38,9 +44,7 @@ void RemoveItem(MapType& map, KeyType key, ValueType value)
     }
 }
 
-GenealogicalTree::PersonPtr GenealogicalTree::AddPersonImpl( const Person& person,
-                                                             OptionalPerson parent1,
-                                                             OptionalPerson parent2 )
+GenealogicalTree::PersonPtr GenealogicalTree::AddPersonImpl(const Person& person)
 {
     auto person_node = std::make_shared<PersonNode>( person );
     
@@ -51,12 +55,7 @@ GenealogicalTree::PersonPtr GenealogicalTree::AddPersonImpl( const Person& perso
         auto bd_res = BirthDateMap.insert( std::make_pair(person.BirthDate, person_node ) );
         
         if ( n_res != NameMap.end()     && ln_res != LastNameMap.end() &&
-             l_res != LocationMap.end() && bd_res != BirthDateMap.end() ) {
-            if( parent1 )
-                SetParent( person_node, parent1.value() );
-            if( parent2 )
-                SetParent( person_node, parent2.value() );
-            
+             l_res != LocationMap.end() && bd_res != BirthDateMap.end() ) {            
             return person_node;
         } else {
             //There was an error, so roll back changes
@@ -67,6 +66,27 @@ GenealogicalTree::PersonPtr GenealogicalTree::AddPersonImpl( const Person& perso
         }
     }
     return nullptr;
+}
+
+GenealogicalTree::PersonPtr GenealogicalTree::AddPersonImpl(const Person& person, const Person& parent1)
+{
+    auto person_node = AddPersonImpl( person );
+    if( person_node ) {
+        SetParent( person_node, parent1 );
+    }
+    return person_node;
+}
+
+GenealogicalTree::PersonPtr GenealogicalTree::AddPersonImpl( const Person& person,
+                                                             const Person& parent1,
+                                                             const Person& parent2 )
+{
+    auto person_node = AddPersonImpl( person );
+    if( person_node ) {
+        SetParent( person_node, parent1 );
+        SetParent( person_node, parent2 );
+    }
+    return person_node;
 }
 
 void GenealogicalTree::SetParent( GenealogicalTree::PersonPtr person, const Person& parent )
