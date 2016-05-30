@@ -3,7 +3,7 @@
 #include <string>
 
 const int GEN_MIN_PEOPLE_NUM = 10;
-const int GEN_MAX_PEOPLE_NUM = 1000000;
+const int GEN_MAX_PEOPLE_NUM = 10000;
 
 class GenealogicalTree;
 
