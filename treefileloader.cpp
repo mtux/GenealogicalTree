@@ -22,14 +22,15 @@ int64_t TreeFileLoader::LoadFile( const std::string& path )
     std::ifstream input(path);
     if( input.good() ) {
         std::string line;
-        int64_t count = 0;
+        int64_t counter = 0;
+        
         while( input.good() ){
             std::getline(input, line);
             if( line.size() > 1 && line[0] != '#' ) {
-                count += LoadPerson(line) ? 1 : 0;
+                counter += LoadPerson(line) ? 1 : 0;
             }
         }
-        return count;
+        return counter;
     } else {
         LastError = "Cannot find or open the specified file.";
         return -1;

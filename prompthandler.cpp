@@ -69,13 +69,13 @@ int PromptHandler::EventLoop()
 void PromptHandler::DisplayEventOptions()
 {
     cout << "\n\n======================================================================" << endl;
-    cout << "What do you want to do?"   << endl;
-    cout << "\t[f] Find a person"       << endl;
+    cout << "What do you want to do?" << endl;
+    cout << "\t[f] Find a person" << endl;
     cout << "\t[a] Find all descendants with name Bob for all ascendants with name Will" << endl;
-    cout << "\t[l] Load a data file"    << endl;
-    cout << "\t[g] Generate a random data file" << endl;
-    cout << "\t[q] Quit"                << endl;
-    cout << '>';
+    cout << "\t[l] Load a genealogical tree file" << endl;
+    cout << "\t[g] Create a genealogical tree file with randomly generated data" << endl;
+    cout << "\t[q] Quit" << endl;
+    cout << "> ";
 }
 
 void PromptHandler::GenerateFile()
@@ -98,8 +98,11 @@ void PromptHandler::GenerateFile()
     getline( cin, path );
     Utils::Trim( path );
     if ( ! path.empty() ) {
+        cout << "Creating ... ";
+        cout.flush();
         TreeFileGenerator gen;
         const bool res = gen.Generate( path, num_of_people );
+        cout << endl;
         if( res ) {
             const std::string msg = "File \"" + path + "\" generated successfully.";
             DisplayMessage( msg );
@@ -119,8 +122,11 @@ void PromptHandler::LoadFile()
     getline(cin, path);
     Utils::Trim(path);
     if ( ! path.empty() ) {
+        cout << "Loading ... ";
+        cout.flush();
         TreeFileLoader loader( &Tree );
         const auto count = loader.LoadFile( path );
+        cout << endl;
         if( count >= 0 ) {
             const std::string msg = to_string( count ) + " people loaded successfully.";
             DisplayMessage( msg );
@@ -145,7 +151,7 @@ void PromptHandler::FindPerson()
         cout << "\t[3] Location"    << endl;
         cout << "\t[4] Birth Date"  << endl;
         cout << "\t[c] *** Cancel"  << endl;
-        cout << '>';
+        cout << "> ";
         string line;
         getline(cin, line);
         switch( line[0] ) {
@@ -266,9 +272,9 @@ void PromptHandler::DisplayOnePersonInColumns(int row_num, const Person& person,
 void PromptHandler::FindAllDescendantsForAllAscendants()
 {
     string descendant_name, ascendant_name;
-    cout << "Descendants' Name(press enter to use name \"Bob\")? ";
+    cout << "Descendants' Name ? (press enter to use \"Bob\") ";
     getline(cin, descendant_name);
-    cout << "Ascendants' Name(press enter to use name \"Will\")? ";
+    cout << "Ascendants' Name ? (press enter to use \"Will\") ";
     getline(cin, ascendant_name);
     Utils::Trim( descendant_name );
     Utils::Trim( ascendant_name  );
@@ -291,7 +297,7 @@ void PromptHandler::DisplayDescendantInfo(const DescendantInfo& info)
     cout << "\n+++++++++++++++++++++++++++++++++++++" << endl;
     DisplayOnePersonInColumns( -1, info.Descendant );
     if( info.Ascendants.empty() ) {
-        cout << "\tHas no ascendant with the requested name!" << endl;
+        cout << "\tNo ascendant with the requested name!" << endl;
     } else {
         cout << "\t------ Ascendants -------------------" << endl;
         DisplayPersonColumnTitles( "\t", "Distance" );
