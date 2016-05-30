@@ -8,6 +8,4 @@ Build instruction: *(To build you would need CMake, and GCC 5.x in addition to G
   $ make
 ```
 
-To use it, just run the executable and follow the instructions. it should be easy and fun.
-
-*Bonus feature*: It has a random data generator built in to provide some data for testing purpose.
+To use it, just run the executable and follow the instructions. You can load and use the "*sample_tree.txt*" file which comes with the source code or create a new one via the application itself.
