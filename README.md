@@ -10,4 +10,4 @@ Build instruction: *(To build you would need CMake, and GCC 5.x in addition to G
 
 To use it, just run the executable and follow the instructions. it should be easy and fun.
 
-*Bonus feature*: It has a random data generator built in to play with.
+*Bonus feature*: It has a random data generator built in to provide some data for testing purpose.
