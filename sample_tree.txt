@@ -1,4 +1,7 @@
 # Randomly generated data
+# Format:
+# Person's Name:Person's Last name:Location:birthyear:birthmonth:birthday;Parent1's Name:Last name:Location:birthyear:birthmonth:birthday;Parent2's Name:Last name:Location:birthyear:birthmonth:birthday
+# So ':' separates fields in one person's definition, and ';' separates persons' definition from each others.
 Janet:Rogers:Palestine:1958:7:8
 Will:Harris:Italy:2007:11:6
 Donald:Allen:United States:1997:3:22
