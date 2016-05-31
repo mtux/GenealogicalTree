@@ -38,16 +38,23 @@ int PromptHandler::EventLoop()
 {
     char cmd = 0;
     string line;
+    const std::string EMPTY_TREE_MSG = "The tree is empty. Try loading some data file first.";
     while ( cmd != 'q' ) {
         DisplayEventOptions();
         getline(cin, line);
         cmd = line[0];
         switch( cmd ) {
             case 'f':
-                FindPerson();
+                if( ! Tree.IsEmpty() )
+                    FindPerson();
+                else
+                    DisplayErrorMessage( EMPTY_TREE_MSG );
                 break;
             case 'a':
-                FindAllDescendantsForAllAscendants();
+                if( ! Tree.IsEmpty() )
+                    FindAllDescendantsForAllAscendants();
+                else
+                    DisplayErrorMessage( EMPTY_TREE_MSG );
                 break;
             case 'l':
                 LoadFile();
@@ -70,10 +77,10 @@ void PromptHandler::DisplayEventOptions()
 {
     cout << "\n\n======================================================================" << endl;
     cout << "What do you want to do?" << endl;
+    cout << "\t[g] Create a genealogical tree file with randomly generated data" << endl;
+    cout << "\t[l] Load a genealogical tree file" << endl;
     cout << "\t[f] Find a person" << endl;
     cout << "\t[a] Find all descendants with name Bob for all ascendants with name Will" << endl;
-    cout << "\t[l] Load a genealogical tree file" << endl;
-    cout << "\t[g] Create a genealogical tree file with randomly generated data" << endl;
     cout << "\t[q] Quit" << endl;
     cout << "> ";
 }
@@ -139,11 +146,77 @@ void PromptHandler::LoadFile()
     }
 }
 
+bool PromptHandler::FindPersonByName()
+{
+    cout << "Name? ";
+    string name;
+    getline(cin, name);
+    if( !name.empty() ) {
+        auto res = Tree.FindPersonByName( name );
+        DisplayPersons( res );
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool PromptHandler::FindPersonByLastName()
+{
+    cout << "Last Name? ";
+    string lname;
+    getline(cin, lname);
+    if( !lname.empty() ) {
+        auto res = Tree.FindPersonByLastName( lname );
+        DisplayPersons( res );
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool PromptHandler::FindPersonByLocation()
+{
+    cout << "Location? ";
+    string location;
+    getline(cin, location);
+    if( !location.empty() ) {
+        auto res = Tree.FindPersonByLocation( location );
+        DisplayPersons( res );
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool PromptHandler::FindPersonByBirthDate()
+{
+    cout << "Birthdate(yyyy mm dd)? ";
+    int year, month, day;
+    string date_str;
+    getline(cin, date_str);
+    auto strings = Utils::Split(date_str, ' ');
+    if( strings.size() >= 3 ) {
+        try {
+            year =  stoi( strings[0] );
+            month = stoi( strings[1] );
+            day   = stoi( strings[2] );
+            auto res = Tree.FindPersonByBirthDate( year, month, day );
+            DisplayPersons( res );
+            return true;
+        } catch( const invalid_argument& e ) {
+            DisplayErrorMessage( "Not a number. Please try again." );
+            return false;
+        }
+    } else {
+        DisplayErrorMessage( "Not enough numbers. Please try again." );
+        return false;
+    }
+}
+
 void PromptHandler::FindPerson()
 {
-    bool repeat = true;
-    while( repeat ) {
-        repeat = false;
+    bool ok = false;
+    while( ! ok ) {
         cout << "------------------------------------------------" << endl;
         cout << "By what criteria?" << endl;
         cout << "\t[1] Name"        << endl;
@@ -156,71 +229,25 @@ void PromptHandler::FindPerson()
         getline(cin, line);
         switch( line[0] ) {
             case '1':
-            {
-                cout << "Name? ";
-                string name;
-                getline(cin, name);
-                if( !name.empty() ) {
-                    auto res = Tree.FindPersonByName( name );
-                    DisplayPersons( res );
-                }
-            }
+                ok = FindPersonByName();
                 break;
             case '2':
-            {
-                cout << "Last Name? ";
-                string lname;
-                getline(cin, lname);
-                if( !lname.empty() ) {
-                    auto res = Tree.FindPersonByLastName( lname );
-                    DisplayPersons( res );
-                }
-            }
+                ok = FindPersonByLastName();
                 break;
             case '3':
-            {
-                cout << "Location? ";
-                string location;
-                getline(cin, location);
-                if( !location.empty() ) {
-                    auto res = Tree.FindPersonByLocation( location );
-                    DisplayPersons( res );
-                }
-            }
+                ok = FindPersonByLocation();
                 break;
             case '4':
-            {
-                cout << "Birthdate(yyyy mm dd)? ";
-                int year, month, day;
-                string date_str;
-                getline(cin, date_str);
-                auto strings = Utils::Split(date_str, ' ');
-                if( strings.size() >= 3 ) {
-                    try {
-                        year =  stoi( strings[0] );
-                        month = stoi( strings[1] );
-                        day   = stoi( strings[2] );
-                        auto res = Tree.FindPersonByBirthDate( year, month, day );
-                        DisplayPersons( res );
-                    } catch( const invalid_argument& e ) {
-                        DisplayErrorMessage( "Not a number. Please try again." );
-                        repeat = true;
-                    }
-                } else {
-                    DisplayErrorMessage( "Not enough numbers. Please try again." );
-                    repeat = true;
-                }
-            }
+                ok = FindPersonByBirthDate();
                 break;
             case 'c':
-                repeat = false;
+                ok = true;
                 break;
             default:
                 DisplayErrorMessage( WRONG_INPUT_MESSAGE );
-                repeat = true;
+                ok = false;
                 break;
         }
-        
     }
 }
 

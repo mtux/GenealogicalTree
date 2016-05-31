@@ -20,6 +20,10 @@ private:
     void GenerateFile();
     void LoadFile();
     void FindPerson();
+    bool FindPersonByName();
+    bool FindPersonByLastName();
+    bool FindPersonByLocation();
+    bool FindPersonByBirthDate();
     void FindAllDescendantsForAllAscendants();
     
     void DisplayEventOptions();

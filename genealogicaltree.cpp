@@ -16,6 +16,11 @@ GenealogicalTree::~GenealogicalTree()
 
 }
 
+bool GenealogicalTree::IsEmpty()
+{
+    return NameMap.empty();
+}
+
 bool GenealogicalTree::AddPerson(const Person& person)
 {
     return AddPersonImpl( person ) != nullptr;

@@ -58,6 +58,8 @@ public:
     GenealogicalTree();
     ~GenealogicalTree();
     
+    bool IsEmpty();
+    
     bool AddPerson( const Person& person );
     bool AddPerson( const Person& person, const Person& parent1 );
     bool AddPerson( const Person& person, const Person& parent1, const Person& parent2 );
@@ -67,7 +69,7 @@ public:
     Persons FindPersonByLocation( const std::string& location );
     Persons FindPersonByBirthDate( int year, int month, int day );
     
-    DescendantInfos FindAllDescendantsForAllAscendants( const std::string& descendants_name, const std::string& ascendants_name );
+    DescendantInfos FindAllDescendantsForAllAscendants( const std::string& descendants_name, const std::string& ascendants_name );    
     
     GenealogicalTree(const GenealogicalTree& other) = delete;
     GenealogicalTree& operator=(const GenealogicalTree& other) = delete;
