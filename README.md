@@ -1,6 +1,6 @@
 A **Genealogical Tree** to keep and show information about a family tree.
 
-Build instruction: *(To build you would need CMake, and GCC 5.x in addition to GNU Make.)*
+Build instruction: *(To build you would need CMake 3.1.0 or earlier, and GCC 5.x in addition to GNU Make.)*
 ```
   $ cd GenealogicalTree
   $ mkdir build && cd build
