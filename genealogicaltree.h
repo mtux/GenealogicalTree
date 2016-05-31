@@ -51,6 +51,13 @@ struct DescendantInfo
 };
 using DescendantInfos = std::vector<DescendantInfo>;
 
+/*
+ * This class manages actual graph of data. It is a Directed Acyclic Graph, which consists of PersonNode objects as nodes of the graph,
+ * and the parent1 and parent2 provide connection between people.
+ * There's no direct way to find children of a person, due to the fact that there's no need as of now.
+ * it would be possible to have it by adding a list of pointers to children in each node though.
+ * 4 balanced binary trees (using std::multimap now) contain indexes of names to people in the graph to make finding anyone a fast thing to do.
+ */
 class GenealogicalTree
 {
     
@@ -76,6 +83,7 @@ public:
     bool operator==(const GenealogicalTree& other) = delete;
     
 private:
+    //Internal definitions:
     struct PersonNode;
     using PersonPtr = std::shared_ptr<PersonNode>;
     using PersonPtrs = std::vector<PersonPtr>;
