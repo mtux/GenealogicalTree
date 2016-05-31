@@ -5,6 +5,9 @@
 
 #include <string>
 
+/*
+ * All of the interactions with user are being done here. It keeps a loop running until user decides to quit the application.
+ */
 class PromptHandler
 {
 public:
