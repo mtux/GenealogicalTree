@@ -6,31 +6,21 @@
 
 #include <string>
 #include <ostream>
-#include <ctime>
 #include <map>
 #include <vector>
 #include <memory>
 
 struct Person
 {
-    Person() : BirthDate(-1) {}
-    Person(const std::string& name, const std::string& l_name, const std::string& location, time_t b_day)
+    Person() {}
+    Person(const std::string& name, const std::string& l_name, const std::string& location, Utils::Date b_day)
     :Name(name), LastName(l_name), Location(location), BirthDate(b_day)
     {}
     
     std::string  Name;
     std::string  LastName;
     std::string  Location;
-    time_t       BirthDate;
-    
-    void SetBirthDate( Utils::Date date )
-    {
-        BirthDate = Utils::ConvertDateToCTime( date );
-    }
-    Utils::Date GetBirthDate() const
-    {
-        return Utils::ConvertCTimeToDate( BirthDate );
-    }
+    Utils::Date  BirthDate;
 };
 
 typedef std::vector<Person> Persons;
@@ -103,7 +93,7 @@ private:
     std::multimap<std::string, PersonPtr> NameMap;
     std::multimap<std::string, PersonPtr> LastNameMap;
     std::multimap<std::string, PersonPtr> LocationMap;
-    std::multimap<time_t, PersonPtr>      BirthDateMap;
+    std::multimap<Utils::Date, PersonPtr> BirthDateMap;
     
     PersonPtr AddPersonImpl( const Person& person );
     PersonPtr AddPersonImpl( const Person& person, const Person& parent1 );
@@ -112,7 +102,7 @@ private:
     void SetParent( GenealogicalTree::PersonPtr person, const Person& parent );
     
     PersonPtr FindPerson( const std::string& name, const std::string& last_name,
-                          const std::string& location, time_t birth_date = -1 );
+                          const std::string& location, Utils::Date birth_date = Utils::Date() );
     
     PersonPtrs FindPersonPtrByName( const std::string& name );
     PersonPtrs FindPersonPtrByLastName( const std::string& last_name );

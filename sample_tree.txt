@@ -6,55 +6,53 @@ Janet:Rogers:Palestine:1958:7:8
 Will:Harris:Italy:2007:11:6
 Donald:Allen:United States:1997:3:22
 Jennifer:Peterson:Sierra Leone:1925:5:12
-Joshua:Ross:Italy:1911:0:10
+Joshua:Ross:Italy:1911:1:10
 Sandra:Rogers:Netherlands:1988:6:27
-Martha:Reed:South Africa:1926:0:5
+Martha:Reed:South Africa:1926:1:5
 Ann:Ward:Nigeria:1952:1:15
 Debra:Morgan:Singapore:1973:10:20
 David:Anderson:Indonesia:1912:11:3
 Richard:Thompson:Macao:1904:2:13;Will:Harris:Italy:2007:11:6;Mehrdad:Rogers:Netherlands:1988:6:27
-Michael:Morgan:Monaco:1901:5:25;Jennifer:Peterson:Sierra Leone:1925:5:12;Joshua:Ross:Italy:1911:0:10
+Michael:Morgan:Monaco:1901:5:25;Jennifer:Peterson:Sierra Leone:1925:5:12;Joshua:Ross:Italy:1911:1:10
 Carol:Butler:Serbia:1997:9:21;Debra:Harris:Italy:2007:11:6;Ann:Ward:Nigeria:1952:1:15
-Gary:Parker:Liberia:1980:9:4;Richard:Thompson:Macao:1904:2:13;Martha:Reed:South Africa:1926:0:5
+Gary:Parker:Liberia:1980:9:4;Richard:Thompson:Macao:1904:2:13;Martha:Reed:South Africa:1926:1:5
 Linda:Bell:Luxembourg:1915:8:18;David:Anderson:Indonesia:1912:11:3;Richard:Thompson:Macao:1904:2:13
 Will:Evans:Iceland:2000:9:11;David:Anderson:Indonesia:1912:11:3;Richard:Thompson:Macao:1904:2:13
-Sarah:Taylor:Germany:1980:0:15;David:Anderson:Indonesia:1912:11:3;Diane:Evans:Iceland:2000:9:11
-Thomas:Jenkins:Tunisia:1993:8:3;Debra:Morgan:Singapore:1973:10:20;Martha:Reed:South Africa:1926:0:5
+Sarah:Taylor:Germany:1980:1:15;David:Anderson:Indonesia:1912:11:3;Diane:Evans:Iceland:2000:9:11
+Thomas:Jenkins:Tunisia:1993:8:3;Debra:Morgan:Singapore:1973:10:20;Martha:Reed:South Africa:1926:1:5
 Matthew:Nelson:Germany:1945:1:8;Sandra:Rogers:Netherlands:1988:6:27;Janet:Rogers:Palestine:1958:7:8
-Henry:Parker:Palestine:1907:10:15;David:Anderson:Indonesia:1912:11:3;Joshua:Ross:Italy:1911:0:10
+Henry:Parker:Palestine:1907:10:15;David:Anderson:Indonesia:1912:11:3;Joshua:Ross:Italy:1911:1:10
 Will:Howard:Gibraltar:1931:9:22;Gary:Parker:Liberia:1980:9:4;Linda:Bell:Luxembourg:1915:8:18
-Raymond:Coleman:Kazakhstan:1930:10:16;Richard:Thompson:Macao:1904:2:13;Martha:Reed:South Africa:1926:0:5
+Raymond:Coleman:Kazakhstan:1930:10:16;Richard:Thompson:Macao:1904:2:13;Martha:Reed:South Africa:1926:1:5
 Jennifer:Sanders:Serbia:1941:4:14;Debra:Morgan:Singapore:1973:10:20;Jennifer:Peterson:Sierra Leone:1925:5:12
 Martha:Nelson:Oman:1940:3:21;Gary:Parker:Liberia:1980:9:4;Will:Howard:Gibraltar:1931:9:22
-Andrew:Wood:Greenland:2002:1:16;Sarah:Taylor:Germany:1980:0:15;Henry:Parker:Palestine:1907:10:15
-Dorothy:Rogers:Korea, S:1904:0:18;Debra:Harris:Italy:2007:11:6;Martha:Nelson:Oman:1940:3:21
-Barbara:Simmons:Luxembourg:1964:1:3;Dorothy:Rogers:Korea, S:1904:0:18;Raymond:Coleman:Kazakhstan:1930:10:16
+Andrew:Wood:Greenland:2002:1:16;Sarah:Taylor:Germany:1980:1:15;Henry:Parker:Palestine:1907:10:15
+Dorothy:Rogers:Korea, S:1904:1:18;Debra:Harris:Italy:2007:11:6;Martha:Nelson:Oman:1940:3:21
+Barbara:Simmons:Luxembourg:1964:1:3;Dorothy:Rogers:Korea, S:1904:1:18;Raymond:Coleman:Kazakhstan:1930:10:16
 Debra:Hughes:Maldives:1944:3:21;Jennifer:Sanders:Serbia:1941:4:14;Barbara:Simmons:Luxembourg:1964:1:3
 Diane:Barnes:Iceland:1957:7:13;Sandra:Rogers:Netherlands:1988:6:27;Gary:Parker:Liberia:1980:9:4
 Melissa:King:Jersey:1982:10:16;Debra:Hughes:Maldives:1944:3:21;Barbara:Simmons:Luxembourg:1964:1:3
 Bob:Morris:Northern Mariana Islands:1980:6:2;Will:Morgan:Monaco:1901:5:25;Janet:Rogers:Palestine:1958:7:8
 Christopher:Bailey:Jamaica:1937:4:17;Raymond:Coleman:Kazakhstan:1930:10:16;Debra:Morgan:Singapore:1973:10:20
 George:Bell:Swaziland:1969:11:15;Debra:Hughes:Maldives:1944:3:21;Linda:Bell:Luxembourg:1915:8:18
-Jose:Wilson:Tuvalu:1926:7:7;George:Bell:Swaziland:1969:11:15;Martha:Reed:South Africa:1926:0:5
+Jose:Wilson:Tuvalu:1926:7:7;George:Bell:Swaziland:1969:11:15;Martha:Reed:South Africa:1926:1:5
 Frank:Brown:Malawi:1915:5:10;David:Anderson:Indonesia:1912:11:3;Donald:Allen:United States:1997:3:22
 Jason:Butler:Norfolk Island:1932:8:16;Andrew:Wood:Greenland:2002:1:16;Diane:Barnes:Iceland:1957:7:13
-
 Bob:Roberts:Malawi:1907:3:12;Jose:Wilson:Tuvalu:1926:7:7;Christopher:Bailey:Jamaica:1937:4:17
-
 Diane:Morris:Palau:1974:10:1;Barbara:Simmons:Luxembourg:1964:1:3;Jason:Butler:Norfolk Island:1932:8:16
-Susan:Garcia:Kazakhstan:2001:0:5;Joshua:Ross:Italy:1911:0:10;Debra:Hughes:Maldives:1944:3:21
+Susan:Garcia:Kazakhstan:2001:1:5;Joshua:Ross:Italy:1911:1:10;Debra:Hughes:Maldives:1944:3:21
 Jose:Richardson:Maldives:1924:4:4;Debra:Morgan:Singapore:1973:10:20;Henry:Parker:Palestine:1907:10:15
-Alice:Taylor:Trinidad and Tobago:1971:3:24;Henry:Parker:Palestine:1907:10:15;Susan:Garcia:Kazakhstan:2001:0:5
-Raymond:Peterson:Serbia:1933:0:8;Sandra:Rogers:Netherlands:1988:6:27;Alice:Taylor:Trinidad and Tobago:1971:3:24
-Robert:Powell:Poland:1912:0:11;Christopher:Bailey:Jamaica:1937:4:17;Sandra:Rogers:Netherlands:1988:6:27
-Christine:Ward:Uganda:1936:0:22;Robert:Powell:Poland:1912:0:11;Diane:Evans:Iceland:2000:9:11
-Dennis:Wilson:Macedonia:1943:3:19;Christine:Ward:Uganda:1936:0:22;Linda:Bell:Luxembourg:1915:8:18
-Douglas:Wilson:Jamaica:1915:7:5;Sarah:Taylor:Germany:1980:0:15;Frank:Brown:Malawi:1915:5:10
+Alice:Taylor:Trinidad and Tobago:1971:3:24;Henry:Parker:Palestine:1907:10:15;Susan:Garcia:Kazakhstan:2001:1:5
+Raymond:Peterson:Serbia:1933:1:8;Sandra:Rogers:Netherlands:1988:6:27;Alice:Taylor:Trinidad and Tobago:1971:3:24
+Robert:Powell:Poland:1912:1:11;Christopher:Bailey:Jamaica:1937:4:17;Sandra:Rogers:Netherlands:1988:6:27
+Christine:Ward:Uganda:1936:1:22;Robert:Powell:Poland:1912:1:11;Diane:Evans:Iceland:2000:9:11
+Dennis:Wilson:Macedonia:1943:3:19;Christine:Ward:Uganda:1936:1:22;Linda:Bell:Luxembourg:1915:8:18
+Douglas:Wilson:Jamaica:1915:7:5;Sarah:Taylor:Germany:1980:1:15;Frank:Brown:Malawi:1915:5:10
 Bob:Momeny:Marshall Islands:1988:4:19;Frank:Brown:Malawi:1915:5:10;Will:Howard:Gibraltar:1931:9:22
 Kevin:Cox:Jersey:1939:4:9;Raymond:Coleman:Kazakhstan:1930:10:16;Martha:Nelson:Oman:1940:3:21
-Paul:Clark:Malaysia:1984:1:28;Susan:Garcia:Kazakhstan:2001:0:5;Carol:Butler:Serbia:1997:9:21
-Mark:Cooper:Madagascar:1959:0:25;Sarah:Taylor:Germany:1980:0:15;Michael:Morgan:Monaco:1901:5:25
-Mary:Bailey:Malta:1908:10:2;Robert:Powell:Poland:1912:0:11;Susan:Garcia:Kazakhstan:2001:0:5
+Paul:Clark:Malaysia:1984:1:28;Susan:Garcia:Kazakhstan:2001:1:5;Carol:Butler:Serbia:1997:9:21
+Mark:Cooper:Madagascar:1959:1:25;Sarah:Taylor:Germany:1980:1:15;Michael:Morgan:Monaco:1901:5:25
+Mary:Bailey:Malta:1908:10:2;Robert:Powell:Poland:1912:1:11;Susan:Garcia:Kazakhstan:2001:1:5
 Lisa:Thomas:Malta:1908:8:10;Jennifer:Sanders:Serbia:1941:4:14;Martha:Nelson:Oman:1940:3:21
 Raymond:Wood:Tuvalu:1928:6:19;Mary:Bailey:Malta:1908:10:2;Sandra:Rogers:Netherlands:1988:6:27
 Jerry:Robinson:Tuvalu:1928:6:16;Debra:Morgan:Singapore:1973:10:20;Donald:Allen:United States:1997:3:22
@@ -63,12 +61,12 @@ Debra:Cook:Seychelles:1901:10:21;Jason:Butler:Norfolk Island:1932:8:16;Jose:Rich
 Mary:Ward:Guatemala:1918:10:2;Maria:Roberts:Malawi:1907:3:12;Janet:Rogers:Palestine:1958:7:8
 Nancy:Flores:Northern Mariana Islands:1948:8:21;Jose:Richardson:Maldives:1924:4:4;Diane:Morris:Palau:1974:10:1
 Harold:Anderson:Isle of Man:1920:8:11;Mary:Bailey:Malta:1908:10:2;Debra:Cook:Seychelles:1901:10:21
-Gregory:Bell:Hong Kong:1982:9:4;Robert:Powell:Poland:1912:0:11;Jose:Wilson:Tuvalu:1926:7:7
+Gregory:Bell:Hong Kong:1982:9:4;Robert:Powell:Poland:1912:1:11;Jose:Wilson:Tuvalu:1926:7:7
 Anthony:Campbell:New Zealand:2000:2:10;Debra:Hughes:Maldives:1944:3:21;Donald:Allen:United States:1997:3:22
 Stephanie:Jackson:Jordan:1997:9:18;Sandra:Rogers:Netherlands:1988:6:27;Martha:Nelson:Oman:1940:3:21
 Bob:Roberts:Northern Mariana Islands:1965:9:3;Richard:Thompson:Macao:1904:2:13;Diane:Morris:Palau:1974:10:1
 Nancy:Morris:Kiribati:1946:9:23;Jennifer:Peterson:Sierra Leone:1925:5:12;David:Anderson:Indonesia:1912:11:3
-Andrew:Hall:Singapore:1917:8:28;Raymond:Peterson:Serbia:1933:0:8;Richard:Thompson:Macao:1904:2:13
+Andrew:Hall:Singapore:1917:8:28;Raymond:Peterson:Serbia:1933:1:8;Richard:Thompson:Macao:1904:2:13
 Patricia:Perry:Turkey:1952:7:18;Gregory:Bell:Hong Kong:1982:9:4;Douglas:Wilson:Jamaica:1915:7:5
 Harold:Kelly:Madagascar:1958:7:12;Gregory:Bell:Hong Kong:1982:9:4;Jennifer:Peterson:Sierra Leone:1925:5:12
 Scott:Wright:Malta:1956:9:12;Mary:Bailey:Malta:1908:10:2;Martha:Nelson:Oman:1940:3:21
@@ -80,44 +78,44 @@ Douglas:Adams:Trinidad and Tobago:1920:10:19;Richard:Thompson:Macao:1904:2:13;He
 Terry:Long:Hong Kong:1994:6:10;Raymond:Coleman:Kazakhstan:1930:10:16;Gary:Parker:Liberia:1980:9:4
 Jerry:Torres:Qatar:2009:2:2;Lisa:Thomas:Malta:1908:8:10;Jose:Richardson:Maldives:1924:4:4
 Walter:Foster:Poland:1968:2:16;Andrew:Hall:Singapore:1917:8:28;Mary:Ward:Guatemala:1918:10:2
-Janet:Sanders:Turkmenistan:1936:0:20;Susan:Garcia:Kazakhstan:2001:0:5;Michael:Morgan:Monaco:1901:5:25
-Rebecca:Bryant:Poland:2005:5:18;Christine:Ward:Uganda:1936:0:22;Nancy:Flores:Northern Mariana Islands:1948:8:21
+Janet:Sanders:Turkmenistan:1936:1:20;Susan:Garcia:Kazakhstan:2001:1:5;Michael:Morgan:Monaco:1901:5:25
+Rebecca:Bryant:Poland:2005:5:18;Christine:Ward:Uganda:1936:1:22;Nancy:Flores:Northern Mariana Islands:1948:8:21
 Mary:Jones:Macedonia:1928:11:24;Donald:Allen:United States:1997:3:22;Paul:Clark:Malaysia:1984:1:28
 Joseph:Adams:Isle of Man:1918:10:6;Henry:Parker:Palestine:1907:10:15;Alice:Taylor:Trinidad and Tobago:1971:3:24
-Jerry:Gonzales:Jordan:1982:3:3;Sarah:Taylor:Germany:1980:0:15;Martha:Nelson:Oman:1940:3:21
+Jerry:Gonzales:Jordan:1982:3:3;Sarah:Taylor:Germany:1980:1:15;Martha:Nelson:Oman:1940:3:21
 Linda:Campbell:Mali:1905:4:15;Ann:Ward:Nigeria:1952:1:15;Mary:Ward:Guatemala:1918:10:2
 Alice:Morris:Libya:1904:8:17;Dennis:Wilson:Macedonia:1943:3:19;Jason:Butler:Norfolk Island:1932:8:16
 Patrick:Foster:Puerto Rico:1989:10:6;Mary:Jones:Macedonia:1928:11:24;Harold:Anderson:Isle of Man:1920:8:11
 Henry:Wilson:Netherlands Antilles:1905:8:20;Raymond:Wood:Tuvalu:1928:6:19;Nancy:Flores:Northern Mariana Islands:1948:8:21
 Marie:Stewart:Northern Cyprus:1991:4:14;Rebecca:Bryant:Poland:2005:5:18;Jerry:Gonzales:Jordan:1982:3:3
 Shirley:Powell:Guam:1902:6:3;Henry:Wilson:Netherlands Antilles:1905:8:20;Stephanie:Jackson:Jordan:1997:9:18
-Terry:Hill:Norway:2016:4:18;Martha:Reed:South Africa:1926:0:5;Jose:Richardson:Maldives:1924:4:4
+Terry:Hill:Norway:2016:4:18;Martha:Reed:South Africa:1926:1:5;Jose:Richardson:Maldives:1924:4:4
 Lisa:Ward:Jamaica:1938:1:16;Christopher:Bailey:Jamaica:1937:4:17;Stephanie:Jackson:Jordan:1997:9:18
 Scott:Stewart:Spain:1985:4:13;Frank:Brown:Malawi:1915:5:10;Raymond:Coleman:Kazakhstan:1930:10:16
 Henry:Clark:Sudan:1945:5:27;Patrick:Foster:Puerto Rico:1989:10:6;Nancy:Flores:Northern Mariana Islands:1948:8:21
-Sarah:Parker:Ghana:1983:0:15;Susan:Garcia:Kazakhstan:2001:0:5;Linda:Bell:Luxembourg:1915:8:18
+Sarah:Parker:Ghana:1983:1:15;Susan:Garcia:Kazakhstan:2001:1:5;Linda:Bell:Luxembourg:1915:8:18
 Brenda:Sanders:Lithuania:1978:8:15;Patrick:Foster:Puerto Rico:1989:10:6;Raymond:Coleman:Kazakhstan:1930:10:16
 Pamela:Hayes:Ukraine:1937:3:1;Paul:Clark:Malaysia:1984:1:28;Gregory:Bell:Hong Kong:1982:9:4
 Dorothy:Henderson:Maldives:1932:1:23;Raymond:Coleman:Kazakhstan:1930:10:16;Andrew:Hall:Singapore:1917:8:28
 Barbara:Martinez:Iraq:1938:9:9;Nancy:Flores:Northern Mariana Islands:1948:8:21;Jennifer:Peterson:Sierra Leone:1925:5:12
 Christopher:Rogers:Israel:1941:7:14;David:Anderson:Indonesia:1912:11:3;Jason:Butler:Norfolk Island:1932:8:16
 Ann:Miller:Turkey:1923:10:15;Marie:Jones:Tristan da Cunha:2004:6:12;Christopher:Rogers:Israel:1941:7:14
-Eric:Young:Norfolk Island:1947:7:2;Dorothy:Rogers:Korea, S:1904:0:18;Pamela:Hayes:Ukraine:1937:3:1
+Eric:Young:Norfolk Island:1947:7:2;Dorothy:Rogers:Korea, S:1904:1:18;Pamela:Hayes:Ukraine:1937:3:1
 Jean:Watson:Korea, N:1926:10:8;Frank:Brown:Malawi:1915:5:10;Dennis:Wilson:Macedonia:1943:3:19
 Lisa:Lopez:Netherlands:1952:2:20;Andrew:Hall:Singapore:1917:8:28;Stephanie:Jackson:Jordan:1997:9:18
-Walter:Howard:Kenya:1902:6:23;Dorothy:Rogers:Korea, S:1904:0:18;Dennis:Wilson:Macedonia:1943:3:19
+Walter:Howard:Kenya:1902:6:23;Dorothy:Rogers:Korea, S:1904:1:18;Dennis:Wilson:Macedonia:1943:3:19
 Jose:Wilson:Macedonia:1934:9:14;Terry:Long:Hong Kong:1994:6:10;Frank:Brown:Malawi:1915:5:10
-Cynthia:Wilson:Norway:1940:0:19;Jose:Wilson:Tuvalu:1926:7:7;Walter:Foster:Poland:1968:2:16
+Cynthia:Wilson:Norway:1940:1:19;Jose:Wilson:Tuvalu:1926:7:7;Walter:Foster:Poland:1968:2:16
 Martha:Williams:Rwanda:2004:11:10;Gary:Parker:Liberia:1980:9:4;Sandra:Rogers:Netherlands:1988:6:27
 Douglas:Wood:Sweden:1925:3:17;Jennifer:Sanders:Serbia:1941:4:14;David:Anderson:Indonesia:1912:11:3
-Janet:Peterson:Niger:1921:2:14;Mary:Ward:Guatemala:1918:10:2;Dorothy:Rogers:Korea, S:1904:0:18
-Margaret:Rogers:Kiribati:1991:9:7;Michael:Carter:Rwanda:1920:1:16;Susan:Garcia:Kazakhstan:2001:0:5
-Virginia:Mitchell:Svalbard:2015:4:26;Christine:Ward:Uganda:1936:0:22;Stephanie:Morris:Northern Mariana Islands:1980:6:2
+Janet:Peterson:Niger:1921:2:14;Mary:Ward:Guatemala:1918:10:2;Dorothy:Rogers:Korea, S:1904:1:18
+Margaret:Rogers:Kiribati:1991:9:7;Michael:Carter:Rwanda:1920:1:16;Susan:Garcia:Kazakhstan:2001:1:5
+Virginia:Mitchell:Svalbard:2015:4:26;Christine:Ward:Uganda:1936:1:22;Stephanie:Morris:Northern Mariana Islands:1980:6:2
 Jean:Davis:Poland:2011:8:15;Nancy:Flores:Northern Mariana Islands:1948:8:21;Joseph:Adams:Isle of Man:1918:10:6
 Gary:Phillips:Moldova:1960:5:28;Melissa:King:Jersey:1982:10:16;Walter:Foster:Poland:1968:2:16
 James:Ramirez:Japan:2005:2:3;Michael:Morgan:Monaco:1901:5:25;Paul:Clark:Malaysia:1984:1:28
 Patricia:Murphy:Transnistria:1945:5:12;Terry:Hill:Norway:2016:4:18;Raymond:Coleman:Kazakhstan:1930:10:16
-Timothy:Evans:Turkmenistan:1946:6:17;Rebecca:Bryant:Poland:2005:5:18;Sarah:Parker:Ghana:1983:0:15
+Timothy:Evans:Turkmenistan:1946:6:17;Rebecca:Bryant:Poland:2005:5:18;Sarah:Parker:Ghana:1983:1:15
 Walter:Bennett:Grenada:1978:5:9;Alice:Taylor:Trinidad and Tobago:1971:3:24;Shirley:Powell:Guam:1902:6:3
 Diane:Perry:Israel:1903:11:19;Debra:Hughes:Maldives:1944:3:21;Christopher:Rogers:Israel:1941:7:14
 Cynthia:Jenkins:Northern Cyprus:1966:4:11;Ruth:Howard:Gibraltar:1931:9:22;Raymond:Coleman:Kazakhstan:1930:10:16
@@ -150,10 +148,10 @@ George:Perez:Iran:1961:3:26;Susan:Foster:Northern Cyprus:1912:3:1;Jerry:Robinson
 Ronald:Ross:Pitcaim Islands:1957:6:1;Pamela:Hayes:Ukraine:1937:3:1;Jerry:Robinson:Tuvalu:1928:6:16
 Amy:Sanders:Malaysia:1921:8:10;Jean:Watson:Korea, N:1926:10:8;Frank:Brown:Malawi:1915:5:10
 Patrick:Edwards:Kazakhstan:1957:2:3;Diane:Evans:Iceland:2000:9:11;Lisa:Lopez:Netherlands:1952:2:20
-Cynthia:Morris:Tunisia:1977:0:25;Maria:Roberts:Malawi:1907:3:12;Harold:Anderson:Isle of Man:1920:8:11
+Cynthia:Morris:Tunisia:1977:1:25;Maria:Roberts:Malawi:1907:3:12;Harold:Anderson:Isle of Man:1920:8:11
 Timothy:Stewart:Iran:1990:5:11;Richard:Thompson:Macao:1904:2:13;Jean:Watson:Korea, N:1926:10:8
 Jean:Phillips:Greenland:1922:8:9;Debra:Morgan:Singapore:1973:10:20;Virginia:Mitchell:Svalbard:2015:4:26
-Mark:Adams:Seychelles:2004:7:23;Robert:Powell:Poland:1912:0:11;Joseph:Adams:Isle of Man:1918:10:6
+Mark:Adams:Seychelles:2004:7:23;Robert:Powell:Poland:1912:1:11;Joseph:Adams:Isle of Man:1918:10:6
 David:Davis:Svalbard:1976:2:14;Eric:Young:Norfolk Island:1947:7:2;Janet:Rogers:Palestine:1958:7:8
 Robert:Hill:Spain:2000:3:10;Harold:Cook:Northern Cyprus:1936:9:7;Barbara:Simmons:Luxembourg:1964:1:3
 Ruth:Roberts:Trinidad and Tobago:1957:8:23;Will:Tylor:Luxembourg:1982:3:22;Marie:Scott:Turks and Caicos Islands:2006:10:25
@@ -163,24 +161,24 @@ Rebecca:Torres:Niger:1951:1:19;Gary:Parker:Liberia:1980:9:4;Martha:Williams:Rwan
 Matthew:Barnes:Maldives:1908:8:10;Dorothy:Henderson:Maldives:1932:1:23;Jennifer:Sanders:Serbia:1941:4:14
 Patrick:Rodriguez:Mali:1941:1:17;Scott:Stewart:Spain:1985:4:13;Rebecca:Bryant:Poland:2005:5:18
 Jerry:Walker:Rwanda:1993:3:21;Gary:Collins:Luxembourg:1942:6:6;Raymond:Wood:Tuvalu:1928:6:19
-Martha:Stewart:Oman:1943:4:9;Martha:Reed:South Africa:1926:0:5;Joshua:Hall:Iran:2010:5:15
+Martha:Stewart:Oman:1943:4:9;Martha:Reed:South Africa:1926:1:5;Joshua:Hall:Iran:2010:5:15
 Kenneth:Anderson:Moldova:1917:3:27;Janet:Peterson:Niger:1921:2:14;Timothy:Stewart:Iran:1990:5:11
-Willie:Wright:Palestine:1957:11:3;Raymond:Peterson:Serbia:1933:0:8;George:Collins:Norway:1979:4:21
+Willie:Wright:Palestine:1957:11:3;Raymond:Peterson:Serbia:1933:1:8;George:Collins:Norway:1979:4:21
 Virginia:Bennett:Tristan da Cunha:1978:1:21;Alice:Taylor:Trinidad and Tobago:1971:3:24;Michael:Carter:Rwanda:1920:1:16
 Christine:Murphy:Tristan da Cunha:1973:7:13;Kenneth:Anderson:Moldova:1917:3:27;Jean:Watson:Korea, N:1926:10:8
 Brenda:Torres:Italy:1930:6:27;Kenneth:Anderson:Moldova:1917:3:27;Willie:Wright:Palestine:1957:11:3
 Gregory:Ramirez:Swaziland:1973:1:23;James:Ramirez:Japan:2005:2:3;Jennifer:Sanders:Serbia:1941:4:14
 Willie:Powell:Transnistria:1993:4:15;Linda:Campbell:Mali:1905:4:15;Andrew:Wood:Greenland:2002:1:16
 Catherine:Kelly:Singapore:1978:3:9;Alice:Taylor:Trinidad and Tobago:1971:3:24;Mary:Ward:Guatemala:1918:10:2
-Lisa:Johnson:Lithuania:1989:9:3;Jason:Butler:Norfolk Island:1932:8:16;Joshua:Ross:Italy:1911:0:10
-Jose:Wright:Sudan:1910:7:17;Melissa:King:Jersey:1982:10:16;Cynthia:Morris:Tunisia:1977:0:25
+Lisa:Johnson:Lithuania:1989:9:3;Jason:Butler:Norfolk Island:1932:8:16;Joshua:Ross:Italy:1911:1:10
+Jose:Wright:Sudan:1910:7:17;Melissa:King:Jersey:1982:10:16;Cynthia:Morris:Tunisia:1977:1:25
 Debra:Richardson:Madagascar:1961:6:14;George:Bell:Swaziland:1969:11:15;Janet:Rogers:Palestine:1958:7:8
 Ronald:Rogers:United Kingdom:2009:1:23;Douglas:Adams:Trinidad and Tobago:1920:10:19;Melissa:King:Jersey:1982:10:16
 Joseph:Rogers:Senegal:1954:2:11;Douglas:Adams:Trinidad and Tobago:1920:10:19;George:Bell:Swaziland:1969:11:15
 Elizabeth:Green:Jordan:1973:3:15;Ronald:Ross:Pitcaim Islands:1957:6:1;Mary:Ward:Guatemala:1918:10:2
-Timothy:Robinson:Moldova:1926:0:6;Christine:Murphy:Tristan da Cunha:1973:7:13;Jerry:Gonzales:Jordan:1982:3:3
+Timothy:Robinson:Moldova:1926:1:6;Christine:Murphy:Tristan da Cunha:1973:7:13;Jerry:Gonzales:Jordan:1982:3:3
 Diane:Hughes:Hong Kong:1999:5:19;Michael:Anderson:South Ossetia:1934:5:22;Virginia:Mitchell:Svalbard:2015:4:26
-William:Kelly:Indonesia:1906:1:24;Dennis:Wilson:Macedonia:1943:3:19;Christine:Ward:Uganda:1936:0:22
+William:Kelly:Indonesia:1906:1:24;Dennis:Wilson:Macedonia:1943:3:19;Christine:Ward:Uganda:1936:1:22
 Joseph:Powell:Tuvalu:1989:6:5;Diane:Morris:Palau:1974:10:1;Raymond:Wood:Tuvalu:1928:6:19
 Jerry:Sanders:Jordan:1971:9:23;Donald:Allen:United States:1997:3:22;Martha:Stewart:Oman:1943:4:9
 Laura:Stewart:Rwanda:2000:10:19;Jerry:Robinson:Tuvalu:1928:6:16;Kenneth:Anderson:Moldova:1917:3:27
@@ -191,17 +189,17 @@ Stephanie:Moore:Indonesia:2011:2:12;Anthony:Campbell:New Zealand:2000:2:10;Josep
 Elizabeth:Williams:Turkmenistan:1971:9:8;Terry:Long:Hong Kong:1994:6:10;Michael:Anderson:South Ossetia:1934:5:22
 Pamela:Brown:Sudan:2014:1:28;Michael:Anderson:South Ossetia:1934:5:22;James:Ramirez:Japan:2005:2:3
 Frances:Anderson:Mongolia:1905:5:25;Cynthia:Jenkins:Northern Cyprus:1966:4:11;Joyce:Martin:Guatemala:1904:10:3
-Jason:Jones:Moldova:1976:4:23;Cynthia:Wilson:Norway:1940:0:19;Diane:Morris:Palau:1974:10:1
+Jason:Jones:Moldova:1976:4:23;Cynthia:Wilson:Norway:1940:1:19;Diane:Morris:Palau:1974:10:1
 Robert:Thompson:Seychelles:1988:1:2;Lisa:Thomas:Malta:1908:8:10;Margaret:Rogers:Kiribati:1991:9:7
 Michael:Campbell:Swaziland:1995:5:6;Stephanie:Moore:Indonesia:2011:2:12;Debra:Cook:Seychelles:1901:10:21
-Douglas:Washington:Greenland:1908:8:28;Barbara:Martinez:Iraq:1938:9:9;Mark:Cooper:Madagascar:1959:0:25
+Douglas:Washington:Greenland:1908:8:28;Barbara:Martinez:Iraq:1938:9:9;Mark:Cooper:Madagascar:1959:1:25
 Anthony:Torres:Iceland:1984:10:18;Jean:Watson:Korea, N:1926:10:8;Debra:Harris:Italy:2007:11:6
 Karen:Foster:Greenland:1931:1:21;George:Bell:Swaziland:1969:11:15;Jennifer:Sanders:Serbia:1941:4:14
-Jeffrey:Wood:Germany:1939:4:18;Nancy:Flores:Northern Mariana Islands:1948:8:21;Sarah:Taylor:Germany:1980:0:15
+Jeffrey:Wood:Germany:1939:4:18;Nancy:Flores:Northern Mariana Islands:1948:8:21;Sarah:Taylor:Germany:1980:1:15
 Ronald:Robinson:Niger:1953:4:9;Martha:Nelson:Oman:1940:3:21;Ann:Miller:Turkey:1923:10:15
 Willie:Phillips:Switzerland:1916:3:15;Terry:Hill:Norway:2016:4:18;Robert:Thompson:Seychelles:1988:1:2
 Alice:Lee:Norfolk Island:1961:11:17;Jean:Watson:Korea, N:1926:10:8;Nancy:Morris:Kiribati:1946:9:23
-Brian:Coleman:Micronesia:1901:10:5;Susan:Garcia:Kazakhstan:2001:0:5;Scott:Stewart:Spain:1985:4:13
+Brian:Coleman:Micronesia:1901:10:5;Susan:Garcia:Kazakhstan:2001:1:5;Scott:Stewart:Spain:1985:4:13
 Stephanie:Rivera:Jersey:1914:2:7;Virginia:Mitchell:Svalbard:2015:4:26;Mary:Jones:Macedonia:1928:11:24
 Jennifer:Sanchez:Micronesia:2000:7:25;Andrew:Hall:Singapore:1917:8:28;Patricia:Perry:Turkey:1952:7:18
 Will:Coleman:Italy:1988:6:22;Bob:Momeny:Marshall Islands:1988:4:19;Carol:Butler:Serbia:1997:9:21
@@ -213,7 +211,7 @@ Mark:Murphy:Malaysia:1964:8:15;Michael:Anderson:South Ossetia:1934:5:22;Lisa:Tho
 Debra:Martinez:Nicaragua:1911:8:27;Jennifer:Peterson:Sierra Leone:1925:5:12;Walter:Howard:Kenya:1902:6:23
 Lisa:Jackson:Iraq:1912:7:3;Janet:Rogers:Palestine:1958:7:8;Frances:Anderson:Mongolia:1905:5:25
 Shirley:Thomas:Libya:1921:3:9;Frank:Brown:Malawi:1915:5:10;Kathleen:Roberts:Northern Mariana Islands:1965:9:3
-Donald:Ramirez:Iceland:1929:5:14;Susan:Garcia:Kazakhstan:2001:0:5;Jerry:Torres:Qatar:2009:2:2
+Donald:Ramirez:Iceland:1929:5:14;Susan:Garcia:Kazakhstan:2001:1:5;Jerry:Torres:Qatar:2009:2:2
 Joseph:White:South Ossetia:1900:11:6;Willie:Phillips:Switzerland:1916:3:15;Michael:Anderson:South Ossetia:1934:5:22
 Catherine:Allen:Portugal:1924:9:2;Christopher:Rogers:Israel:1941:7:14;Anthony:Campbell:New Zealand:2000:2:10
 Frances:Morgan:Lithuania:1959:2:16;Douglas:Adams:Trinidad and Tobago:1920:10:19;Pamela:Sanders:Maldives:1909:6:24
@@ -222,20 +220,20 @@ Melissa:Patterson:Luxembourg:1994:11:26;Matthew:Barnes:Maldives:1908:8:10;Frank:
 Sharon:Roberts:Senegal:1995:10:21;Laura:Stewart:Rwanda:2000:10:19;Shirley:Powell:Guam:1902:6:3
 David:Barnes:Greenland:2000:8:21;Lisa:Thomas:Malta:1908:8:10;Jose:Flores:Senegal:1906:5:9
 Walter:Mitchell:Netherlands:2015:8:18;David:Jackson:Hong Kong:1929:7:9;David:Anderson:Indonesia:1912:11:3
-Jason:Cox:Spain:1939:0:23;Patrick:Rodriguez:Mali:1941:1:17;Alice:Taylor:Trinidad and Tobago:1971:3:24
+Jason:Cox:Spain:1939:1:23;Patrick:Rodriguez:Mali:1941:1:17;Alice:Taylor:Trinidad and Tobago:1971:3:24
 Margaret:Mitchell:Philippines:1936:11:10;Christine:Murphy:Tristan da Cunha:1973:7:13;Donald:Allen:United States:1997:3:22
 Catherine:Clark:Trinidad and Tobago:2003:2:7;Debra:Cook:Seychelles:1901:10:21;Harold:Anderson:Isle of Man:1920:8:11
 Carolyn:Campbell:Iran:1986:4:2;Gregory:Wood:Sudan:1924:11:12;Jean:Phillips:Greenland:1922:8:9
-Mark:Perez:Sudan:2008:0:7;Martha:Nelson:Oman:1940:3:21;Joseph:Rogers:Senegal:1954:2:11
+Mark:Perez:Sudan:2008:1:7;Martha:Nelson:Oman:1940:3:21;Joseph:Rogers:Senegal:1954:2:11
 Virginia:Flores:Qatar:2007:5:21;George:Howard:Oman:1981:7:15;Alice:Lee:Norfolk Island:1961:11:17
 Diane:Robinson:Liberia:1919:8:2;David:Anderson:Indonesia:1912:11:3;Willie:Wright:Palestine:1957:11:3
 Michelle:Moore:Senegal:1948:2:2;Mark:Murphy:Malaysia:1964:8:15;Anthony:Campbell:New Zealand:2000:2:10
-Michael:Alexander:Suriname:1901:8:7;Sarah:Parker:Ghana:1983:0:15;Jose:Richardson:Maldives:1924:4:4
+Michael:Alexander:Suriname:1901:8:7;Sarah:Parker:Ghana:1983:1:15;Jose:Richardson:Maldives:1924:4:4
 Ronald:Evans:Korea, N:1914:3:1;Harold:Anderson:Isle of Man:1920:8:11;David:Anderson:Indonesia:1912:11:3
 Debra:Moore:Turkmenistan:1933:1:14;Diane:Barnes:Iceland:1957:7:13;Stephanie:Morris:Northern Mariana Islands:1980:6:2
 George:Wright:Guatemala:1946:11:17;Debra:Harris:Italy:2007:11:6;Raymond:Coleman:Kazakhstan:1930:10:16
-Patricia:Edwards:Netherlands Antilles:1959:0:1;Joseph:Powell:Tuvalu:1989:6:5;Christopher:Bailey:Jamaica:1937:4:17
-Karen:Carter:Moldova:1970:4:9;Joseph:Rogers:Senegal:1954:2:11;Sarah:Taylor:Germany:1980:0:15
+Patricia:Edwards:Netherlands Antilles:1959:1:1;Joseph:Powell:Tuvalu:1989:6:5;Christopher:Bailey:Jamaica:1937:4:17
+Karen:Carter:Moldova:1970:4:9;Joseph:Rogers:Senegal:1954:2:11;Sarah:Taylor:Germany:1980:1:15
 Debra:Rogers:Trinidad and Tobago:1984:8:4;Donald:Ramirez:Iceland:1929:5:14;Alice:Morris:Libya:1904:8:17
 Catherine:Evans:Greenland:1912:6:27;Henry:Parker:Palestine:1907:10:15;Sarah:Butler:Svalbard:1912:11:16
 Ronald:Thomas:Transnistria:1902:7:4;Terry:Wood:Qatar:2001:8:7;Gregory:Ramirez:Swaziland:1973:1:23
@@ -244,7 +242,7 @@ Janet:Jones:Guam:2012:8:10;Jeffrey:Wood:Germany:1939:4:18;Barbara:Simmons:Luxemb
 William:Scott:Japan:2004:8:26;George:Collins:Norway:1979:4:21;Terry:Wood:Qatar:2001:8:7
 Charles:Howard:Mali:2007:11:9;Sarah:Butler:Svalbard:1912:11:16;Harold:Cook:Northern Cyprus:1936:9:7
 Frank:Williams:Japan:2000:1:6;Mark:Murphy:Malaysia:1964:8:15;Margaret:Mitchell:Philippines:1936:11:10
-Matthew:Edwards:Grenada:1983:10:26;Ronald:Robinson:Niger:1953:4:9;Joshua:Ross:Italy:1911:0:10
+Matthew:Edwards:Grenada:1983:10:26;Ronald:Robinson:Niger:1953:4:9;Joshua:Ross:Italy:1911:1:10
 Raymond:Jones:Libya:1952:10:1;Frances:Anderson:Mongolia:1905:5:25;Frank:Brown:Malawi:1915:5:10
 Henry:White:United States:1962:4:13;Joyce:Martin:Guatemala:1904:10:3;Debra:Rogers:Trinidad and Tobago:1984:8:4
 Bob:Baker:Palestine:1992:10:13;Ruth:Roberts:Trinidad and Tobago:1957:8:23;Henry:Parker:Palestine:1907:10:15
@@ -256,16 +254,16 @@ Cynthia:Campbell:Norway:1983:5:25;Rebecca:Torres:Niger:1951:1:19;Jerry:Torres:Qa
 Robert:Clark:South Ossetia:1955:4:20;Elizabeth:Harris:Philippines:1931:9:4;Sandra:Rogers:Netherlands:1988:6:27
 David:Edwards:Niger:2003:5:5;Donald:Ramirez:Iceland:1929:5:14;David:Barnes:Greenland:2000:8:21
 Ronald:Green:Transnistria:1914:5:2;Joyce:Martin:Guatemala:1904:10:3;Debra:Richardson:Madagascar:1961:6:14
-Douglas:Sanders:Sierra Leone:1988:7:4;Jose:Richardson:Maldives:1924:4:4;Jason:Cox:Spain:1939:0:23
+Douglas:Sanders:Sierra Leone:1988:7:4;Jose:Richardson:Maldives:1924:4:4;Jason:Cox:Spain:1939:1:23
 Jessica:Anderson:Sierra Leone:2008:8:19;Carolyn:Campbell:Iran:1986:4:2;Jose:Flores:Senegal:1906:5:9
-Alice:Hill:Ukraine:1960:0:16;David:Gonzalez:Kazakhstan:1992:2:27;Michael:Carter:Rwanda:1920:1:16
-Michael:Miller:Malta:1994:8:6;Alice:Hill:Ukraine:1960:0:16;Jennifer:Sanders:Serbia:1941:4:14
+Alice:Hill:Ukraine:1960:1:16;David:Gonzalez:Kazakhstan:1992:2:27;Michael:Carter:Rwanda:1920:1:16
+Michael:Miller:Malta:1994:8:6;Alice:Hill:Ukraine:1960:1:16;Jennifer:Sanders:Serbia:1941:4:14
 Ruth:Moore:Iceland:1963:2:23;Elizabeth:Thomas:Qatar:1945:5:24;Ruth:Howard:Gibraltar:1931:9:22
-Charles:Bailey:Poland:1965:0:21;Patrick:Hernandez:Tunisia:2010:5:23;Frank:Brown:Malawi:1915:5:10
+Charles:Bailey:Poland:1965:1:21;Patrick:Hernandez:Tunisia:2010:5:23;Frank:Brown:Malawi:1915:5:10
 Frances:Brooks:Norway:1957:6:20;Lisa:Jackson:Iraq:1912:7:3;Catherine:Evans:Greenland:1912:6:27
 Jose:Johnson:Maldives:1971:11:8;Linda:Bell:Luxembourg:1915:8:18;Patrick:Foster:Puerto Rico:1989:10:6
 Catherine:Jones:Italy:1935:6:11;Patricia:Perry:Turkey:1952:7:18;Lisa:Thomas:Malta:1908:8:10
-Larry:Walker:Transnistria:1947:0:8;Sandra:Rogers:Netherlands:1988:6:27;Melissa:Patterson:Luxembourg:1994:11:26
+Larry:Walker:Transnistria:1947:1:8;Sandra:Rogers:Netherlands:1988:6:27;Melissa:Patterson:Luxembourg:1994:11:26
 Mary:Jenkins:Mali:2016:5:1;George:Wright:Guatemala:1946:11:17;George:Collins:Norway:1979:4:21
 Brian:Peterson:Portugal:1971:4:9;Elizabeth:Harris:Philippines:1931:9:4;Joseph:Rogers:Senegal:1954:2:11
 Kevin:Jenkins:Libya:1946:10:15;Pamela:Sanders:Maldives:1909:6:24;David:Henderson:Niue:1920:3:7
@@ -276,26 +274,26 @@ Ann:Foster:Palestine:1964:10:4;Martha:Stewart:Oman:1943:4:9;Shirley:Thomas:Libya
 Michelle:Perez:Niger:1945:1:7;Brenda:Sanders:Lithuania:1978:8:15;Jason:Butler:Norfolk Island:1932:8:16
 Lisa:Green:Libya:1978:1:13;Douglas:Wilson:Jamaica:1915:7:5;Debra:Cook:Seychelles:1901:10:21
 Carolyn:Lewis:Mali:1941:6:17;Sharon:Roberts:Senegal:1995:10:21;Eric:Young:Norfolk Island:1947:7:2
-Kimberly:Richardson:Portugal:1923:6:17;Joshua:Hall:Iran:2010:5:15;Sarah:Taylor:Germany:1980:0:15
+Kimberly:Richardson:Portugal:1923:6:17;Joshua:Hall:Iran:2010:5:15;Sarah:Taylor:Germany:1980:1:15
 Eric:Ramirez:Suriname:1999:9:4;Mary:Jones:Macedonia:1928:11:24;Donald:Allen:United States:1997:3:22
 Brian:Coleman:Italy:1926:10:4;Frank:Williams:Japan:2000:1:6;Will:Tylor:Luxembourg:1982:3:22
-Alice:Powell:Turkey:1947:11:23;Gregory:Wood:Sudan:1924:11:12;Susan:Garcia:Kazakhstan:2001:0:5
+Alice:Powell:Turkey:1947:11:23;Gregory:Wood:Sudan:1924:11:12;Susan:Garcia:Kazakhstan:2001:1:5
 Debra:Taylor:Isle of Man:1961:10:24;Jerry:Sanders:Jordan:1971:9:23;Jose:Wright:Sudan:1910:7:17
 Jason:Lee:South Africa:1967:9:2;Jean:Watson:Korea, N:1926:10:8;Jerry:Torres:Qatar:2009:2:2
 John:Adams:Mongolia:1985:8:18;Dennis:Lewis:Tristan da Cunha:1929:3:22;Patrick:Rodriguez:Mali:1941:1:17
 Lisa:Lewis:Kazakhstan:2011:8:24;Walter:Foster:Poland:1968:2:16;Jason:Butler:Norfolk Island:1932:8:16
-Carol:White:Italy:1939:0:11;Alice:Powell:Turkey:1947:11:23;Jean:Davis:Poland:2011:8:15
+Carol:White:Italy:1939:1:11;Alice:Powell:Turkey:1947:11:23;Jean:Davis:Poland:2011:8:15
 Michael:Hill:Marshall Islands:1994:9:23;Raymond:Coleman:Kazakhstan:1930:10:16;Patrick:Hernandez:Tunisia:2010:5:23
 Sharon:Mitchell:Tristan da Cunha:1961:1:25;Jean:Watson:Korea, N:1926:10:8;Ronald:Green:Transnistria:1914:5:2
-Harold:Long:Italy:1915:2:9;Cynthia:Morris:Tunisia:1977:0:25;Mary:Baker:Rwanda:1958:5:15
+Harold:Long:Italy:1915:2:9;Cynthia:Morris:Tunisia:1977:1:25;Mary:Baker:Rwanda:1958:5:15
 Raymond:Smith:South Ossetia:2006:7:13;Richard:Thompson:Macao:1904:2:13;Ruth:Howard:Gibraltar:1931:9:22
 Melissa:Carter:Rwanda:1935:9:7;Catherine:Jones:Italy:1935:6:11;Barbara:Simmons:Luxembourg:1964:1:3
 Kevin:Martin:Russia:1993:9:13;William:Kelly:Indonesia:1906:1:24;Douglas:Sanders:Sierra Leone:1988:7:4
-Henry:Martinez:Niger:1977:2:1;Ann:Ward:Nigeria:1952:1:15;Joshua:Ross:Italy:1911:0:10
+Henry:Martinez:Niger:1977:2:1;Ann:Ward:Nigeria:1952:1:15;Joshua:Ross:Italy:1911:1:10
 Pamela:Torres:Macedonia:1951:4:12;David:Gonzalez:Kazakhstan:1992:2:27;Joshua:Hall:Iran:2010:5:15
 Lisa:Garcia:Poland:2006:2:9;Brian:Coleman:Micronesia:1901:10:5;Matthew:Barnes:Maldives:1908:8:10
 James:Bailey:Guatemala:2000:6:28;Alice:Lee:Norfolk Island:1961:11:17;David:Gonzalez:Kazakhstan:1992:2:27
-Paul:Alexander:Niger:1995:4:27;Michael:Campbell:Swaziland:1995:5:6;Raymond:Peterson:Serbia:1933:0:8
+Paul:Alexander:Niger:1995:4:27;Michael:Campbell:Swaziland:1995:5:6;Raymond:Peterson:Serbia:1933:1:8
 Frank:Anderson:Netherlands:1925:10:14;Karen:Carter:Moldova:1970:4:9;Harold:Anderson:Isle of Man:1920:8:11
 Peter:Mitchell:Switzerland:1988:6:12;Joseph:Powell:Tuvalu:1989:6:5;James:Ramirez:Japan:2005:2:3
 Larry:Howard:Turks and Caicos Islands:1912:1:4;Douglas:Adams:Trinidad and Tobago:1920:10:19;Lisa:Johnson:Lithuania:1989:9:3
@@ -303,17 +301,17 @@ Shirley:Morris:Honduras:1957:7:27;Douglas:Wilson:Jamaica:1915:7:5;Janet:Jones:Gu
 Marie:Parker:Liechtenstein:1975:3:11;Richard:Thompson:Macao:1904:2:13;George:Collins:Norway:1979:4:21
 Jean:Davis:Mongolia:1979:3:13;Patrick:Hernandez:Tunisia:2010:5:23;Jennifer:Peterson:Sierra Leone:1925:5:12
 Rebecca:Griffin:Hong Kong:1962:5:22;David:Gonzalez:Kazakhstan:1992:2:27;Ruth:Howard:Gibraltar:1931:9:22
-Pamela:Thomas:Netherlands:1968:9:21;Sarah:Parker:Ghana:1983:0:15;Susan:Foster:Northern Cyprus:1912:3:1
-Walter:Garcia:Jersey:1944:0:17;Henry:Wilson:Netherlands Antilles:1905:8:20;Ann:Foster:Palestine:1964:10:4
+Pamela:Thomas:Netherlands:1968:9:21;Sarah:Parker:Ghana:1983:1:15;Susan:Foster:Northern Cyprus:1912:3:1
+Walter:Garcia:Jersey:1944:1:17;Henry:Wilson:Netherlands Antilles:1905:8:20;Ann:Foster:Palestine:1964:10:4
 Elizabeth:Martin:Guam:1932:11:10;Christopher:Bailey:Jamaica:1937:4:17;Joseph:Gonzales:Trinidad and Tobago:1952:9:18
 Dennis:Cooper:Russia:1976:5:11;Michelle:Moore:Senegal:1948:2:2;George:Bell:Swaziland:1969:11:15
 Karen:Perry:Kazakhstan:2005:8:24;Lisa:Garcia:Poland:2006:2:9;Michael:Carter:Rwanda:1920:1:16
 Jessica:Garcia:Singapore:1970:10:28;Dorothy:Henderson:Maldives:1932:1:23;Christopher:Bailey:Jamaica:1937:4:17
 Nancy:Hill:South Ossetia:1989:6:4;Margaret:Rogers:Kiribati:1991:9:7;Marie:Parker:Liechtenstein:1975:3:11
-Cynthia:Bryant:Iceland:1928:8:13;Alice:Hill:Ukraine:1960:0:16;Joseph:Rogers:Senegal:1954:2:11
+Cynthia:Bryant:Iceland:1928:8:13;Alice:Hill:Ukraine:1960:1:16;Joseph:Rogers:Senegal:1954:2:11
 Diane:Cox:Monaco:1906:11:27;Eric:Ramirez:Suriname:1999:9:4;Rebecca:Bryant:Poland:2005:5:18
 Donna:Martinez:Seychelles:1943:6:14;Karen:Perry:Kazakhstan:2005:8:24;Nancy:Morris:Kiribati:1946:9:23
-Edward:Bryant:Jersey:1905:11:17;Sarah:Parker:Ghana:1983:0:15;Marie:Stewart:Northern Cyprus:1991:4:14
+Edward:Bryant:Jersey:1905:11:17;Sarah:Parker:Ghana:1983:1:15;Marie:Stewart:Northern Cyprus:1991:4:14
 Patrick:Morris:Guatemala:1965:10:1;Willie:Powell:Transnistria:1993:4:15;George:Bell:Swaziland:1969:11:15
 Janet:Simmons:Tunisia:1922:5:6;Douglas:Wood:Sweden:1925:3:17;Patrick:Morris:Guatemala:1965:10:1
 Kimberly:Rogers:Germany:1901:7:15;Ronald:Rogers:United Kingdom:2009:1:23;Barbara:Martinez:Iraq:1938:9:9
@@ -325,40 +323,40 @@ Eric:Mitchell:Luxembourg:1922:3:10;David:Alexander:Jordan:1927:8:11;Melissa:King
 Matthew:Scott:Gibraltar:1902:9:21;Virginia:Mitchell:Svalbard:2015:4:26;Gregory:Ramirez:Swaziland:1973:1:23
 Diane:Jones:Netherlands Antilles:1906:5:28;Lisa:Ward:Jamaica:1938:1:16;David:Jackson:Hong Kong:1929:7:9
 Henry:Stewart:Northern Mariana Islands:1945:5:3;Debra:Richardson:Madagascar:1961:6:14;Martha:Nelson:Oman:1940:3:21
-Debra:Lee:India:1914:11:3;Walter:Mitchell:Liberia:1993:3:12;Janet:Sanders:Turkmenistan:1936:0:20
+Debra:Lee:India:1914:11:3;Walter:Mitchell:Liberia:1993:3:12;Janet:Sanders:Turkmenistan:1936:1:20
 Ann:Adams:Senegal:1908:8:8;Janet:Rogers:Palestine:1958:7:8;Michael:Hill:Marshall Islands:1994:9:23
 Jason:Alexander:Nicaragua:1962:8:23;David:Davis:Svalbard:1976:2:14;Jerry:Torres:Qatar:2009:2:2
 Catherine:Adams:Kiribati:1923:1:17;David:Jackson:Hong Kong:1929:7:9;Jennifer:Sanchez:Micronesia:2000:7:25
 Anthony:Long:Singapore:1954:11:3;Robert:Thompson:Seychelles:1988:1:2;Jerry:Torres:Qatar:2009:2:2
 Shirley:Howard:Jordan:1971:5:25;Michael:Carter:Rwanda:1920:1:16;Kevin:Jenkins:Libya:1946:10:15
 Eric:Carter:Poland:1953:9:14;Janet:Peterson:Niger:1921:2:14;Walter:Bennett:Grenada:1978:5:9
-Mark:Morris:Greece:2002:0:18;Patrick:Rodriguez:Mali:1941:1:17;Jerry:Gonzales:Jordan:1982:3:3
-Daniel:Bell:Macedonia:2008:8:11;Jennifer:Peterson:Sierra Leone:1925:5:12;Sarah:Taylor:Germany:1980:0:15
+Mark:Morris:Greece:2002:1:18;Patrick:Rodriguez:Mali:1941:1:17;Jerry:Gonzales:Jordan:1982:3:3
+Daniel:Bell:Macedonia:2008:8:11;Jennifer:Peterson:Sierra Leone:1925:5:12;Sarah:Taylor:Germany:1980:1:15
 Deborah:Sanchez:Tuvalu:1987:3:25;Donald:Allen:United States:1997:3:22;Jose:Wilson:Tuvalu:1926:7:7
 Robert:Turner:Iraq:1971:8:20;Anthony:Campbell:New Zealand:2000:2:10;Henry:Clark:Sudan:1945:5:27
-Margaret:Ross:Ukraine:1984:0:9;Gary:Parker:Liberia:1980:9:4;Pamela:Sanders:Maldives:1909:6:24
+Margaret:Ross:Ukraine:1984:1:9;Gary:Parker:Liberia:1980:9:4;Pamela:Sanders:Maldives:1909:6:24
 Sarah:Washington:Sierra Leone:1962:4:21;Andrew:Wood:Greenland:2002:1:16;Dennis:Wilson:Macedonia:1943:3:19
 Edward:Collins:Sudan:1944:3:7;Christopher:Bailey:Jamaica:1937:4:17;Sandra:Rogers:Netherlands:1988:6:27
 Larry:Hill:Uganda:1942:4:18;George:Bell:Swaziland:1969:11:15;Christopher:Rogers:Israel:1941:7:14
 Diane:Hughes:Gibraltar:1939:8:3;Mary:Ward:Guatemala:1918:10:2;Brenda:James:Nigeria:1904:1:18
 Joshua:Morris:Israel:1959:4:8;Jerry:Robinson:Tuvalu:1928:6:16;Virginia:Mitchell:Svalbard:2015:4:26
-Gregory:Gray:Singapore:1908:0:15;Nancy:Allen:Northern Mariana Islands:1971:9:25;Janet:Jones:Guam:2012:8:10
+Gregory:Gray:Singapore:1908:1:15;Nancy:Allen:Northern Mariana Islands:1971:9:25;Janet:Jones:Guam:2012:8:10
 Gary:Gonzales:Kiribati:1934:6:13;Margaret:Mitchell:Philippines:1936:11:10;David:Davis:Svalbard:1976:2:14
 Frank:Griffin:Guatemala:1961:7:5;Brenda:Torres:Indonesia:2006:8:5;Diane:Robinson:Liberia:1919:8:2
 Michelle:Roberts:Libya:1952:9:17;Raymond:Coleman:Kazakhstan:1930:10:16;Jeffrey:Wood:Germany:1939:4:18
 Donald:Patterson:Suriname:1954:6:16;Joseph:Adams:Isle of Man:1918:10:6;Barbara:Simmons:Luxembourg:1964:1:3
 Joseph:Rodriguez:Montenegro:1949:2:25;Catherine:Adams:Kiribati:1923:1:17;Gary:Phillips:Moldova:1960:5:28
-Jessica:Perez:Iceland:1955:9:8;Patricia:Edwards:Netherlands Antilles:1959:0:1;Henry:Parker:Palestine:1907:10:15
+Jessica:Perez:Iceland:1955:9:8;Patricia:Edwards:Netherlands Antilles:1959:1:1;Henry:Parker:Palestine:1907:10:15
 Marie:Clark:Japan:2003:10:11;Margaret:Mitchell:Philippines:1936:11:10;Susan:Foster:Northern Cyprus:1912:3:1
-Sharon:Martinez:Greenland:1957:11:13;Raymond:Peterson:Serbia:1933:0:8;Frances:Anderson:Mongolia:1905:5:25
+Sharon:Martinez:Greenland:1957:11:13;Raymond:Peterson:Serbia:1933:1:8;Frances:Anderson:Mongolia:1905:5:25
 Margaret:Rivera:Moldova:1917:11:17;Gregory:Ramirez:Swaziland:1973:1:23;George:Wright:Guatemala:1946:11:17
 Frank:Jackson:Uganda:1995:11:23;Frank:Hernandez:Senegal:1900:4:16;Janet:Jones:Guam:2012:8:10
-Patricia:Washington:Tristan da Cunha:1921:2:4;Alice:Hill:Ukraine:1960:0:16;Pamela:Sanders:Maldives:1909:6:24
+Patricia:Washington:Tristan da Cunha:1921:2:4;Alice:Hill:Ukraine:1960:1:16;Pamela:Sanders:Maldives:1909:6:24
 Jean:Griffin:Ukraine:1972:4:16;Dennis:Lewis:Tristan da Cunha:1929:3:22;David:Anderson:Indonesia:1912:11:3
 Patricia:Butler:Tristan da Cunha:1901:5:7;Henry:Wilson:Netherlands Antilles:1905:8:20;Gary:Gonzales:Kiribati:1934:6:13
 Steven:Hughes:Malaysia:1978:8:21;Margaret:Rogers:Kiribati:1991:9:7;Kimberly:Rogers:Germany:1901:7:15
-Stephanie:Turner:Pakistan:1983:5:10;Bob:Momeny:Marshall Islands:1988:4:19;Alice:Hill:Ukraine:1960:0:16
-Kathleen:Robinson:Montenegro:2009:0:21;Robert:Clark:South Ossetia:1955:4:20;Alice:Morris:Libya:1904:8:17
+Stephanie:Turner:Pakistan:1983:5:10;Bob:Momeny:Marshall Islands:1988:4:19;Alice:Hill:Ukraine:1960:1:16
+Kathleen:Robinson:Montenegro:2009:1:21;Robert:Clark:South Ossetia:1955:4:20;Alice:Morris:Libya:1904:8:17
 Jessica:Sanders:Micronesia:1962:6:28;Donald:Patterson:Suriname:1954:6:16;Joseph:Rodriguez:Montenegro:1949:2:25
 Michelle:Cooper:Luxembourg:1989:1:5;James:Ramirez:Japan:2005:2:3;Walter:Bennett:Grenada:1978:5:9
 Andrew:Henderson:Transnistria:1902:4:27;Martha:Nelson:Oman:1940:3:21;Raymond:Wood:Tuvalu:1928:6:19
@@ -372,20 +370,20 @@ William:Allen:South Africa:1979:6:14;Patrick:Edwards:Kazakhstan:1957:2:3;Henry:W
 Larry:Bryant:Russia:2008:10:1;Henry:Wilson:Netherlands Antilles:1905:8:20;Harold:Anderson:Isle of Man:1920:8:11
 Frank:Hayes:Northern Cyprus:1962:8:28;Ruth:Moore:Iceland:1963:2:23;Patricia:Murphy:Transnistria:1945:5:12
 Nancy:Hughes:United Kingdom:1917:2:10;Pamela:Torres:Macedonia:1951:4:12;Gregory:Ramirez:Swaziland:1973:1:23
-Donald:Carter:Ghana:1949:10:10;Mark:Perez:Sudan:2008:0:7;Nancy:Flores:Northern Mariana Islands:1948:8:21
+Donald:Carter:Ghana:1949:10:10;Mark:Perez:Sudan:2008:1:7;Nancy:Flores:Northern Mariana Islands:1948:8:21
 Robert:Cox:Kiribati:1931:10:1;Thomas:Torres:Kazakhstan:1928:6:25;Jeffrey:Wood:Germany:1939:4:18
 Susan:Butler:South Africa:2007:4:27;Henry:Parker:Palestine:1907:10:15;Daniel:Bell:Macedonia:2008:8:11
-Brian:Morris:Jersey:1987:1:7;Harold:Cook:Northern Cyprus:1936:9:7;Sarah:Taylor:Germany:1980:0:15
+Brian:Morris:Jersey:1987:1:7;Harold:Cook:Northern Cyprus:1936:9:7;Sarah:Taylor:Germany:1980:1:15
 Frank:Rodriguez:Italy:1983:2:25;Thomas:Jenkins:Tunisia:1993:8:3;Martha:Stewart:Oman:1943:4:9
 Joseph:Gray:Honduras:1949:10:2;Sharon:Martinez:Greenland:1957:11:13;Mary:Ward:Guatemala:1918:10:2
 Elizabeth:Henderson:Kiribati:1917:8:5;Diane:Perry:Israel:1903:11:19;Matthew:Scott:Gibraltar:1902:9:21
 Jeffrey:Scott:Niger:1993:2:12;Jason:Jones:Moldova:1976:4:23;Frances:Anderson:Mongolia:1905:5:25
 Jennifer:Sanders:Turkey:1921:1:17;Pamela:Sanders:Maldives:1909:6:24;Linda:Campbell:Mali:1905:4:15
-Linda:Bryant:Kazakhstan:1928:0:27;Raymond:Peterson:Serbia:1933:0:8;Mary:Baker:Rwanda:1958:5:15
+Linda:Bryant:Kazakhstan:1928:1:27;Raymond:Peterson:Serbia:1933:1:8;Mary:Baker:Rwanda:1958:5:15
 Dennis:White:New Zealand:1992:1:19;Alice:Taylor:Trinidad and Tobago:1971:3:24;Daniel:Bell:Macedonia:2008:8:11
 Donna:Wright:Kenya:1983:5:4;Joseph:Gray:Honduras:1949:10:2;Lisa:Johnson:Lithuania:1989:9:3
 Carol:Washington:Jersey:1985:7:20;Douglas:Adams:Trinidad and Tobago:1920:10:19;Mary:Bailey:Malta:1908:10:2
-Stephanie:Jones:Malaysia:1981:6:7;Peter:Mitchell:Switzerland:1988:6:12;Susan:Garcia:Kazakhstan:2001:0:5
+Stephanie:Jones:Malaysia:1981:6:7;Peter:Mitchell:Switzerland:1988:6:12;Susan:Garcia:Kazakhstan:2001:1:5
 Martha:Cook:United States:1969:7:19;Donna:Reed:Iran:1999:6:22;Richard:Thompson:Macao:1904:2:13
 Dennis:Rodriguez:Singapore:1936:6:25;Marie:Stewart:Northern Cyprus:1991:4:14;Debra:Moore:Turkmenistan:1933:1:14
 Dennis:Evans:Trinidad and Tobago:1947:11:2;Gregory:Wood:Sudan:1924:11:12;Jessica:Garcia:Singapore:1970:10:28
@@ -393,7 +391,7 @@ Barbara:Clark:Transnistria:1955:8:26;Diane:Barnes:Iceland:1957:7:13;Eric:Young:N
 John:Ross:Russia:2006:2:27;Cynthia:Bryant:Iceland:1928:8:13;Elizabeth:Thomas:Qatar:1945:5:24
 Richard:Wright:Maldives:1931:5:4;Jason:Butler:Norfolk Island:1932:8:16;Ruth:Howard:Gibraltar:1931:9:22
 Jason:King:South Africa:1956:8:1;Frank:Hernandez:Senegal:1900:4:16;Barbara:Martinez:Iraq:1938:9:9
-Frances:Cook:Maldives:1995:3:22;Paul:Clark:Malaysia:1984:1:28;Cynthia:Morris:Tunisia:1977:0:25
+Frances:Cook:Maldives:1995:3:22;Paul:Clark:Malaysia:1984:1:28;Cynthia:Morris:Tunisia:1977:1:25
 Carol:Smith:Korea, S:1975:2:6;Jean:Watson:Korea, N:1926:10:8;Christopher:Rogers:Israel:1941:7:14
 Gregory:Simmons:Nigeria:1932:11:19;Lisa:Lopez:Netherlands:1952:2:20;Debra:Harris:Italy:2007:11:6
 Jose:Hayes:Niue:1913:5:9;Christopher:Rogers:Israel:1941:7:14;David:Henderson:Niue:1920:3:7
@@ -404,15 +402,15 @@ Gregory:Jackson:Oman:1983:8:27;Eric:Young:Norfolk Island:1947:7:2;Gary:Collins:L
 Bob:Evans:Pakistan:1919:4:16;Mark:Murphy:Malaysia:1964:8:15;Will:Coleman:Italy:1988:6:22
 Donald:Coleman:Northern Cyprus:1900:1:18;Pamela:Hayes:Ukraine:1937:3:1;Debra:Torres:Kiribati:1945:10:1
 Kimberly:Campbell:Nigeria:1937:9:6;Elizabeth:Harris:Philippines:1931:9:4;Karen:Foster:Greenland:1931:1:21
-Cynthia:Diaz:Hong Kong:1986:0:13;Jason:King:South Africa:1956:8:1;Kevin:Jenkins:Libya:1946:10:15
-Maria:Sanders:Germany:1950:0:21;Alice:Taylor:Trinidad and Tobago:1971:3:24;Henry:Stewart:Northern Mariana Islands:1945:5:3
+Cynthia:Diaz:Hong Kong:1986:1:13;Jason:King:South Africa:1956:8:1;Kevin:Jenkins:Libya:1946:10:15
+Maria:Sanders:Germany:1950:1:21;Alice:Taylor:Trinidad and Tobago:1971:3:24;Henry:Stewart:Northern Mariana Islands:1945:5:3
 Gregory:Thomas:Pakistan:1905:3:9;Matthew:Edwards:Grenada:1983:10:26;Joseph:Rodriguez:Montenegro:1949:2:25
 Henry:Rivera:United Kingdom:1931:8:17;Nancy:Morris:Kiribati:1946:9:23;Matthew:Edwards:Grenada:1983:10:26
-Kevin:Ramirez:Suriname:1928:6:23;Diane:Barnes:Iceland:1957:7:13;Joshua:Ross:Italy:1911:0:10
+Kevin:Ramirez:Suriname:1928:6:23;Diane:Barnes:Iceland:1957:7:13;Joshua:Ross:Italy:1911:1:10
 Sarah:Smith:Spain:1960:3:5;Kimberly:Richardson:Portugal:1923:6:17;Ronald:Robinson:Niger:1953:4:9
 Donna:Mitchell:Greenland:1977:10:2;Margaret:Cook:Madagascar:1922:9:7;David:Barnes:Greenland:2000:8:21
 James:Peterson:United Kingdom:1970:6:17;Dennis:King:Sudan:2000:10:15;Terry:Hill:Norway:2016:4:18
-Carol:Griffin:Tristan da Cunha:1942:8:18;Sarah:Parker:Ghana:1983:0:15;Barbara:Clark:Transnistria:1955:8:26
+Carol:Griffin:Tristan da Cunha:1942:8:18;Sarah:Parker:Ghana:1983:1:15;Barbara:Clark:Transnistria:1955:8:26
 Harold:Rodriguez:Moldova:1926:2:9;Janet:Rogers:Palestine:1958:7:8;Nancy:Morris:Kiribati:1946:9:23
 Amanda:Ramirez:Serbia:1992:4:3;Donna:Mitchell:Greenland:1977:10:2;Henry:Parker:Palestine:1907:10:15
 Stephanie:Diaz:United Kingdom:2013:11:6;Donna:Mitchell:Greenland:1977:10:2;Andrew:King:Sri Lanka:1979:4:18
@@ -422,15 +420,15 @@ Betty:Gonzalez:Netherlands Antilles:1968:6:25;Margaret:Cook:Madagascar:1922:9:7;
 Jose:Williams:Russia:1976:11:21;Stephanie:Moore:Indonesia:2011:2:12;Joseph:White:South Ossetia:1900:11:6
 Pamela:Moore:Ireland:1983:11:25;Donna:Wright:Kenya:1983:5:4;Joseph:Rogers:Senegal:1954:2:11
 Patricia:Martin:Pakistan:1972:6:5;Debra:Torres:Kiribati:1945:10:1;James:Peterson:United Kingdom:1970:6:17
-Sarah:Mitchell:Swaziland:1998:0:6;Stephanie:Jackson:Jordan:1997:9:18;David:Anderson:Indonesia:1912:11:3
+Sarah:Mitchell:Swaziland:1998:1:6;Stephanie:Jackson:Jordan:1997:9:18;David:Anderson:Indonesia:1912:11:3
 Scott:Scott:Sudan:1919:3:25;Marie:Scott:Turks and Caicos Islands:2006:10:25;Lisa:Thomas:Malta:1908:8:10
-Larry:Lopez:Liberia:1904:3:17;John:Adams:Mongolia:1985:8:18;Walter:Garcia:Jersey:1944:0:17
-Nancy:Perez:Malaysia:1979:11:20;Dorothy:Rogers:Korea, S:1904:0:18;Gregory:Jackson:Oman:1983:8:27
+Larry:Lopez:Liberia:1904:3:17;John:Adams:Mongolia:1985:8:18;Walter:Garcia:Jersey:1944:1:17
+Nancy:Perez:Malaysia:1979:11:20;Dorothy:Rogers:Korea, S:1904:1:18;Gregory:Jackson:Oman:1983:8:27
 Stephanie:Hayes:Jordan:1958:8:5;Pamela:Sanders:Maldives:1909:6:24;Willie:Phillips:Switzerland:1916:3:15
-Kathleen:Phillips:New Zealand:1963:5:4;Janet:Sanders:Turkmenistan:1936:0:20;James:Ramirez:Japan:2005:2:3
+Kathleen:Phillips:New Zealand:1963:5:4;Janet:Sanders:Turkmenistan:1936:1:20;James:Ramirez:Japan:2005:2:3
 Susan:Simmons:Pakistan:2008:9:7;Ann:Miller:Turkey:1923:10:15;Rebecca:Griffin:Hong Kong:1962:5:22
-Ronald:Reed:Uganda:1980:0:7;Joseph:White:South Ossetia:1900:11:6;James:Hughes:Macao:1968:4:6
-Margaret:Turner:Iceland:1933:10:19;Jean:Gonzalez:Swaziland:1933:5:28;Jason:Cox:Spain:1939:0:23
+Ronald:Reed:Uganda:1980:1:7;Joseph:White:South Ossetia:1900:11:6;James:Hughes:Macao:1968:4:6
+Margaret:Turner:Iceland:1933:10:19;Jean:Gonzalez:Swaziland:1933:5:28;Jason:Cox:Spain:1939:1:23
 Deborah:Walker:Netherlands:1908:9:26;Elizabeth:Green:Jordan:1973:3:15;Scott:Wright:Malta:1956:9:12
 Martha:Cooper:New Zealand:2016:7:16;Barbara:Simmons:Luxembourg:1964:1:3;Nancy:Hill:South Ossetia:1989:6:4
 Michael:Long:Micronesia:1932:11:5;Debra:Harris:Italy:2007:11:6;Carolyn:Jackson:Macedonia:1922:1:11
@@ -442,28 +440,28 @@ Joseph:Rodriguez:Senegal:1909:3:4;Steven:Hughes:Malaysia:1978:8:21;Margaret:Rive
 Scott:Russell:Ireland:1920:5:13;Laura:Stewart:Rwanda:2000:10:19;Larry:Howard:Turks and Caicos Islands:1912:1:4
 Mark:Morris:Hong Kong:1955:3:12;Debra:Richardson:Madagascar:1961:6:14;Sharon:Roberts:Singapore:1985:1:27
 Gregory:Washington:Palestine:2014:2:14;Walter:Mitchell:Netherlands:2015:8:18;Catherine:Kelly:Singapore:1978:3:9
-Ronald:Hughes:Jamaica:2010:11:11;Frank:Jackson:Uganda:1995:11:23;Janet:Sanders:Turkmenistan:1936:0:20
+Ronald:Hughes:Jamaica:2010:11:11;Frank:Jackson:Uganda:1995:11:23;Janet:Sanders:Turkmenistan:1936:1:20
 Jessica:Hill:Sudan:1988:8:7;Jerry:Gonzales:Jordan:1982:3:3;William:Ward:Maldives:1939:11:1
-Scott:Hill:Guam:1900:0:15;Joseph:Powell:Tuvalu:1989:6:5;Laura:Stewart:Rwanda:2000:10:19
-Elizabeth:Hayes:Iran:1901:1:26;Diane:Cox:Monaco:1906:11:27;Susan:Garcia:Kazakhstan:2001:0:5
+Scott:Hill:Guam:1900:1:15;Joseph:Powell:Tuvalu:1989:6:5;Laura:Stewart:Rwanda:2000:10:19
+Elizabeth:Hayes:Iran:1901:1:26;Diane:Cox:Monaco:1906:11:27;Susan:Garcia:Kazakhstan:2001:1:5
 Robert:Simmons:Maldives:1916:6:6;James:Cooper:Hong Kong:1991:11:16;Matthew:Nelson:Germany:1945:1:8
 Mary:Clark:Malaysia:1968:3:10;Lisa:Lewis:Kazakhstan:2011:8:24;Terry:Hill:Norway:2016:4:18
 Stephen:Lewis:Indonesia:1979:1:12;Eric:Young:Norfolk Island:1947:7:2;Larry:Lopez:Liberia:1904:3:17
 Donald:Ramirez:Svalbard:1943:10:10;Margaret:Rogers:Kiribati:1991:9:7;Jose:Flores:Senegal:1906:5:9
 Virginia:Williams:Montenegro:1921:9:13;Jean:Watson:Korea, N:1926:10:8;Catherine:Clark:Trinidad and Tobago:2003:2:7
-Jean:Hughes:Puerto Rico:1941:4:6;Raymond:Peterson:Serbia:1933:0:8;Michael:Morgan:Monaco:1901:5:25
+Jean:Hughes:Puerto Rico:1941:4:6;Raymond:Peterson:Serbia:1933:1:8;Michael:Morgan:Monaco:1901:5:25
 Shirley:Bailey:New Caledonia:1995:10:11;Terry:Hall:Russia:1947:10:26;Patricia:Perry:Turkey:1952:7:18
 Willie:Hall:Qatar:2003:4:12;Jose:Johnson:Maldives:1971:11:8;Raymond:Coleman:Kazakhstan:1930:10:16
 Kenneth:Butler:Oman:2002:3:17;Steven:Hughes:Malaysia:1978:8:21;Virginia:Mitchell:Svalbard:2015:4:26
 Patricia:Evans:New Zealand:2005:3:27;David:Gonzalez:Kazakhstan:1992:2:27;Susan:Butler:South Africa:2007:4:27
 Mark:Martinez:Sudan:1925:8:10;Janet:Simmons:Tunisia:1922:5:6;Ann:Miller:Turkey:1923:10:15
 Frances:Barnes:Ghana:1982:7:24;Dennis:Wilson:Macedonia:1943:3:19;Sarah:Washington:Sierra Leone:1962:4:21
-Linda:Hill:Lithuania:1926:8:8;Jerry:Walker:Rwanda:1993:3:21;Carol:White:Italy:1939:0:11
+Linda:Hill:Lithuania:1926:8:8;Jerry:Walker:Rwanda:1993:3:21;Carol:White:Italy:1939:1:11
 Stephanie:Rodriguez:Honduras:1976:3:23;Cynthia:Campbell:Norway:1983:5:25;Elizabeth:Henderson:Kiribati:1917:8:5
 Gregory:Scott:Seychelles:1985:7:15;Brenda:James:Nigeria:1904:1:18;Kimberly:Campbell:Nigeria:1937:9:6
 Kathleen:Anderson:Rwanda:1925:7:22;Catherine:Gray:Qatar:2010:4:4;Carolyn:Campbell:Iran:1986:4:2
-Deborah:Nelson:Hong Kong:1930:0:20;Martha:Stewart:Oman:1943:4:9;Andrew:Wood:Greenland:2002:1:16
-Anna:Garcia:United States:2003:2:8;Martha:Reed:South Africa:1926:0:5;Gregory:Torres:United States:1954:8:28
+Deborah:Nelson:Hong Kong:1930:1:20;Martha:Stewart:Oman:1943:4:9;Andrew:Wood:Greenland:2002:1:16
+Anna:Garcia:United States:2003:2:8;Martha:Reed:South Africa:1926:1:5;Gregory:Torres:United States:1954:8:28
 Helen:Anderson:Palestine:1974:9:25;Jose:Johnson:Maldives:1971:11:8;Charles:Harris:Sierra Leone:1995:10:19
 Rebecca:Miller:Serbia:1953:10:3;Joseph:Rogers:Senegal:1954:2:11;Joseph:Rodriguez:Montenegro:1949:2:25
 Mark:Bailey:Hungary:1973:3:21;Pamela:Torres:Macedonia:1951:4:12;Catherine:Jones:Italy:1935:6:11
@@ -475,32 +473,32 @@ Edward:Hall:Iceland:2005:10:26;George:Bell:Swaziland:1969:11:15;Jean:Davis:Mongo
 Terry:Gonzales:Niue:1950:5:22;Mark:Evans:Pakistan:1919:4:16;Margaret:Turner:Iceland:1933:10:19
 Martha:Bennett:Macao:1934:11:26;Richard:Thompson:Macao:1904:2:13;Kenneth:Peterson:Russia:1909:6:11
 Anthony:Gonzales:South Ossetia:1989:4:10;Margaret:Turner:Iceland:1933:10:19;Dennis:Evans:Trinidad and Tobago:1947:11:2
-Kimberly:Rivera:Isle of Man:1925:1:8;Gregory:Gray:Singapore:1908:0:15;Will:Coleman:Italy:1988:6:22
+Kimberly:Rivera:Isle of Man:1925:1:8;Gregory:Gray:Singapore:1908:1:15;Will:Coleman:Italy:1988:6:22
 Mary:Parker:Marshall Islands:1973:5:15;Robert:Cox:Kiribati:1931:10:1;Anthony:Long:Singapore:1954:11:3
-Angela:Perry:Luxembourg:1962:4:2;Kathleen:Robinson:Montenegro:2009:0:21;Michael:Campbell:Swaziland:1995:5:6
+Angela:Perry:Luxembourg:1962:4:2;Kathleen:Robinson:Montenegro:2009:1:21;Michael:Campbell:Swaziland:1995:5:6
 Dorothy:Kelly:Iran:1980:7:10;David:Alexander:Jordan:1927:8:11;Harold:Cook:Northern Cyprus:1936:9:7
 Catherine:Young:Philippines:1966:3:18;Scott:Wright:Malta:1956:9:12;Elizabeth:Henderson:Kiribati:1917:8:5
-Pamela:Jackson:Greece:1912:3:2;Christine:Ward:Uganda:1936:0:22;Charles:Bailey:Poland:1965:0:21
+Pamela:Jackson:Greece:1912:3:2;Christine:Ward:Uganda:1936:1:22;Charles:Bailey:Poland:1965:1:21
 John:Long:Kazakhstan:1909:4:16;Michelle:Roberts:Libya:1952:9:17;Patrick:Foster:Puerto Rico:1989:10:6
 Jeffrey:Thomas:Hungary:1951:11:27;Kimberly:Richardson:Portugal:1923:6:17;Kathleen:Phillips:New Zealand:1963:5:4
 Richard:Morgan:India:1967:4:3;Gregory:Ramirez:Swaziland:1973:1:23;Jean:Davis:Mongolia:1979:3:13
 Dorothy:Thompson:Sudan:2013:11:16;Michael:Alexander:Suriname:1901:8:7;William:Kelly:Indonesia:1906:1:24
-Angela:Jones:Monaco:2016:0:7;David:Barnes:Greenland:2000:8:21;Laura:Price:Transnistria:2016:6:24
+Angela:Jones:Monaco:2016:1:7;David:Barnes:Greenland:2000:8:21;Laura:Price:Transnistria:2016:6:24
 Daniel:Stewart:Greenland:1999:11:18;Debra:Moore:Turkmenistan:1933:1:14;James:Bailey:Guatemala:2000:6:28
 Debra:Harris:Qatar:1939:7:11;Melissa:Morris:South Ossetia:1932:1:22;Jerry:Sanders:Jordan:1971:9:23
-Dorothy:Bailey:India:1903:11:6;Michael:Morgan:Monaco:1901:5:25;Ronald:Reed:Uganda:1980:0:7
+Dorothy:Bailey:India:1903:11:6;Michael:Morgan:Monaco:1901:5:25;Ronald:Reed:Uganda:1980:1:7
 Sandra:Edwards:Trinidad and Tobago:2011:1:27;Michael:Morgan:Monaco:1901:5:25;Melissa:King:Jersey:1982:10:16
-Edward:Taylor:Russia:2010:0:5;Jessica:Anderson:Sierra Leone:2008:8:19;Donna:Martinez:Seychelles:1943:6:14
-Michelle:Thompson:Transnistria:1969:0:18;Robert:Hill:Spain:2000:3:10;Jeffrey:Scott:Niger:1993:2:12
+Edward:Taylor:Russia:2010:1:5;Jessica:Anderson:Sierra Leone:2008:8:19;Donna:Martinez:Seychelles:1943:6:14
+Michelle:Thompson:Transnistria:1969:1:18;Robert:Hill:Spain:2000:3:10;Jeffrey:Scott:Niger:1993:2:12
 Catherine:Barnes:Lithuania:2012:11:22;Martha:Bennett:Macao:1934:11:26;Sandra:Rogers:Netherlands:1988:6:27
 Dennis:Morgan:Moldova:2011:1:8;Brian:Coleman:Italy:1926:10:4;Gregory:Jackson:Oman:1983:8:27
-Frank:Hughes:Puerto Rico:1957:2:25;Debra:Rogers:Trinidad and Tobago:1984:8:4;Angela:Jones:Monaco:2016:0:7
+Frank:Hughes:Puerto Rico:1957:2:25;Debra:Rogers:Trinidad and Tobago:1984:8:4;Angela:Jones:Monaco:2016:1:7
 Robert:Gonzalez:Rwanda:1993:9:21;Linda:Campbell:Mali:1905:4:15;Anthony:Campbell:New Zealand:2000:2:10
 Donna:Adams:Moldova:2013:3:16;Stephanie:Morris:Northern Mariana Islands:1980:6:2;James:Cooper:Hong Kong:1991:11:16
 Deborah:Bennett:United States:1993:6:4;Sarah:Washington:Sierra Leone:1962:4:21;William:Kelly:Indonesia:1906:1:24
 William:Jenkins:Macedonia:1999:8:11;Diane:Jones:Netherlands Antilles:1906:5:28;Elizabeth:Harris:Philippines:1931:9:4
 Harold:Wright:Singapore:1996:5:24;Donna:Wright:Trinidad and Tobago:1924:6:17;Patrick:Edwards:Kazakhstan:1957:2:3
 Edward:Wright:Trinidad and Tobago:2012:9:12;Michael:Alexander:Suriname:1901:8:7;Michael:Carter:Rwanda:1920:1:16
-Joseph:James:Netherlands:1928:3:4;Jerry:Robinson:Tuvalu:1928:6:16;Christine:Ward:Uganda:1936:0:22
+Joseph:James:Netherlands:1928:3:4;Jerry:Robinson:Tuvalu:1928:6:16;Christine:Ward:Uganda:1936:1:22
 Scott:Collins:Transnistria:1970:4:1;Larry:Lopez:Liberia:1904:3:17;Kathleen:Anderson:Rwanda:1925:7:22
-Virginia:Smith:Greenland:1906:0:19;Kimberly:Rivera:Isle of Man:1925:1:8;Gregory:Scott:Seychelles:1985:7:15
+Virginia:Smith:Greenland:1906:1:19;Kimberly:Rivera:Isle of Man:1925:1:8;Gregory:Scott:Seychelles:1985:7:15

@@ -200,7 +200,6 @@ bool PromptHandler::FindPersonByBirthDate()
             year =  stoi( strings[0] );
             month = stoi( strings[1] );
             day   = stoi( strings[2] );
-            --month;
             auto res = Tree.FindPersonByBirthDate( year, month, day );
             DisplayPersons( res );
             return true;
@@ -284,11 +283,13 @@ void PromptHandler::DisplayPersonColumnTitles(const std::string& leading_text, c
 void PromptHandler::DisplayOnePersonInColumns(int row_num, const Person& person,
                                               const std::string& leading_text, const std::string& trailing_text)
 {
-    auto date = person.GetBirthDate();
+    const long long day = person.BirthDate.GetDay();
+    const long long mon = person.BirthDate.GetMonth();
+    const long long year = person.BirthDate.GetYear();
 
     std::string date_str = "NULL";
-    if( date.Day != -1 && date.Month != -1 )
-        date_str = to_string((long long)date.Year) + '-' + to_string((long long)date.Month) + '-' + to_string((long long)date.Day);
+    if( day != -1 && mon != -1 )
+        date_str = to_string(year) + '-' + to_string(mon) + '-' + to_string(day);
     cout << leading_text;
     if( row_num != -1 ) {
         cout << left << setw(NUM_WIDTH)      << row_num;

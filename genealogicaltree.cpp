@@ -135,7 +135,7 @@ Persons GenealogicalTree::GetPersonsFromPersonPtrs( GenealogicalTree::PersonPtrs
 }
 
 GenealogicalTree::PersonPtr GenealogicalTree::FindPerson( const std::string& name, const std::string& last_name,
-                                                          const std::string& location, time_t birth_date )
+                                                          const std::string& location, Utils::Date birth_date )
 {
     auto matched_people = FindPersonPtrByName( name );
     auto count = matched_people.size();
@@ -143,7 +143,7 @@ GenealogicalTree::PersonPtr GenealogicalTree::FindPerson( const std::string& nam
     {
         if( matched_people.at(i)->Info.LastName == last_name &&
             matched_people.at(i)->Info.Location == location &&
-            (birth_date == -1 || matched_people.at(i)->Info.BirthDate == birth_date)
+            ( ! birth_date.IsValid() || matched_people.at(i)->Info.BirthDate == birth_date )
           ) {
                 return matched_people.at(i);
             }
@@ -168,10 +168,7 @@ GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByLocation( const st
 
 GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByBirthDate( int year, int month, int day )
 {
-    time_t time = Utils::ConvertDateToCTime( Utils::Date(year, month, day) );
-    if( time == -1 )
-        throw std::invalid_argument("Invalid Date!");
-    return FindPersonPtrByKey( BirthDateMap, time );
+    return FindPersonPtrByKey( BirthDateMap, Utils::Date(year, month, day) );
 }
 
 DescendantInfos GenealogicalTree::FindAllDescendantsForAllAscendants( const std::string& descendants_name,

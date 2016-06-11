@@ -3,7 +3,6 @@
 
 #include <fstream>
 #include <vector>
-#include <ctime>
 
 TreeFileLoader::TreeFileLoader( GenealogicalTree *tree )
     : Tree(tree)
@@ -64,17 +63,13 @@ bool TreeFileLoader::ReadOnePerson( const std::string& line, Person& p )
         p.Location = elems[2];
         if( elems.size() >= 6 ) {
             try {
-                Utils::Date date;
-                date.Year  = std::stoi( elems[3] );
-                date.Month = std::stoi( elems[4] );
-                date.Day   = std::stoi( elems[5] );
-                p.SetBirthDate( date );
+                const int year  = std::stoi( elems[3] );
+                const int month = std::stoi( elems[4] );
+                const int day   = std::stoi( elems[5] );
+                p.BirthDate = Utils::Date( year, month, day);
             } catch( const std::invalid_argument& ){
-                p.BirthDate = -1;
+                //Ignore the birthdate
             }
-        }
-        else {
-            p.BirthDate = -1;
         }
         return true;
     } else {

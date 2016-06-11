@@ -21,8 +21,8 @@ std::string TreeFileGenerator::GetLastError()
 
 inline std::ostream& operator<< (std::ostream& os, const Person& p)
 {
-    auto date = p.GetBirthDate();
-    os << p.Name << ':' << p.LastName << ':' << p.Location << ':' << date.Year << ':' << date.Month << ':' << date.Day;
+    os << p.Name << ':' << p.LastName << ':' << p.Location << ':'
+       << p.BirthDate.GetYear() << ':' << p.BirthDate.GetMonth() << ':' << p.BirthDate.GetDay();
     return os;
 }
 
@@ -56,10 +56,10 @@ bool TreeFileGenerator::Generate( const std::string& path, int num_of_people )
         std::uniform_int_distribution<> dis_p(0, num_of_people);
 
         auto populate_one_random_person = [&]( Person& p ){
-            p.Name = Names[dis(gen)];
-            p.LastName = LastNames[dis(gen)];
-            p.Location = Countries[dis(gen)];
-            p.SetBirthDate( Utils::Date( dis_year(gen), dis_mon(gen), dis_day(gen) ) );
+            p.Name      = Names[dis(gen)];
+            p.LastName  = LastNames[dis(gen)];
+            p.Location  = Countries[dis(gen)];
+            p.BirthDate = Utils::Date( dis_year(gen), dis_mon(gen), dis_day(gen) );
         };
 
         for(int i = 0; i < 10; ++i){
@@ -78,7 +78,7 @@ bool TreeFileGenerator::Generate( const std::string& path, int num_of_people )
         out.close();
         return true;
     } else {
-        LastError = "File IO error!";
+        LastError = "Cannot open the file for writing.";
         return false;
     }
 }
