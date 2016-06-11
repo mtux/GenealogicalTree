@@ -95,7 +95,7 @@ void PromptHandler::GenerateFile()
         getline(cin, num_str);
         try{
             num_of_people = stoi( num_str );
-        } catch( const invalid_argument& e ) {
+        } catch( const invalid_argument& ) {
             if( num_str[0] == 'c' )
                 return;
             DisplayErrorMessage( "Not a number. Please try again or enter 'c' to Cancel" );
@@ -200,11 +200,12 @@ bool PromptHandler::FindPersonByBirthDate()
             year =  stoi( strings[0] );
             month = stoi( strings[1] );
             day   = stoi( strings[2] );
+            --month;
             auto res = Tree.FindPersonByBirthDate( year, month, day );
             DisplayPersons( res );
             return true;
-        } catch( const invalid_argument& e ) {
-            DisplayErrorMessage( "Not a number. Please try again." );
+        } catch( const invalid_argument& ) {
+            DisplayErrorMessage( "Invalid date format! Please try again." );
             return false;
         }
     } else {
@@ -263,7 +264,7 @@ void PromptHandler::DisplayPersons(const Persons& persons)
         DisplayMessage( "No one found." );
     } else {
         DisplayPersonColumnTitles();
-        for( int i = 0; i < persons.size(); ++i ) {
+        for( unsigned i = 0; i < persons.size(); ++i ) {
             DisplayOnePersonInColumns( i, persons[i] );
         }
     }
@@ -284,7 +285,10 @@ void PromptHandler::DisplayOnePersonInColumns(int row_num, const Person& person,
                                               const std::string& leading_text, const std::string& trailing_text)
 {
     auto date = person.GetBirthDate();
-    std::string date_str = to_string(date.Year) + '-' + to_string(date.Month) + '-' + to_string(date.Day);
+
+    std::string date_str = "NULL";
+    if( date.Day != -1 && date.Month != -1 )
+        date_str = to_string((long long)date.Year) + '-' + to_string((long long)date.Month) + '-' + to_string((long long)date.Day);
     cout << leading_text;
     if( row_num != -1 ) {
         cout << left << setw(NUM_WIDTH)      << row_num;
@@ -328,9 +332,9 @@ void PromptHandler::DisplayDescendantInfo(const DescendantInfo& info)
     } else {
         cout << "\t------ Ascendants -------------------" << endl;
         DisplayPersonColumnTitles( "\t", "Distance" );
-        for(int i = 0; i < info.Ascendants.size(); ++i){
+        for(unsigned i = 0; i < info.Ascendants.size(); ++i){
             DisplayOnePersonInColumns( i, info.Ascendants[i].Ascendant,
-                                       "\t", std::to_string(info.Ascendants[i].Distance) );
+                                       "\t", std::to_string((long long)info.Ascendants[i].Distance) );
         }
     }
 }

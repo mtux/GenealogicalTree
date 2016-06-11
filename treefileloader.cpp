@@ -17,12 +17,12 @@ std::string TreeFileLoader::GetLastError()
     return tmp;
 }
 
-int64_t TreeFileLoader::LoadFile( const std::string& path )
+long long TreeFileLoader::LoadFile( const std::string& path )
 {
     std::ifstream input(path);
     if( input.good() ) {
         std::string line;
-        int64_t counter = 0;
+        long long counter = 0;
         
         while( input.good() ){
             std::getline(input, line);
@@ -69,7 +69,7 @@ bool TreeFileLoader::ReadOnePerson( const std::string& line, Person& p )
                 date.Month = std::stoi( elems[4] );
                 date.Day   = std::stoi( elems[5] );
                 p.SetBirthDate( date );
-            } catch( const std::invalid_argument& e ){
+            } catch( const std::invalid_argument& ){
                 p.BirthDate = -1;
             }
         }

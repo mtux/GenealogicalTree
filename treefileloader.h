@@ -10,7 +10,7 @@ class TreeFileLoader
 public:
     TreeFileLoader( GenealogicalTree* tree );
 
-    int64_t LoadFile( const std::string& path );
+    long long LoadFile( const std::string& path );
 
     std::string GetLastError();
     

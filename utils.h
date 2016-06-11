@@ -5,22 +5,29 @@
 #include <string>
 #include <sstream>
 #include <algorithm>
+#include <vector>
+
+#define DATE_START_YEAR 1900
+
+typedef unsigned int uint32_t;
 
 namespace Utils
 {
     struct Date
     {
-        int Year  = -1;
-        int Month = -1;
-        int Day   = -1;
+		Date(): Year(-1), Month(-1), Day(-1) {}
+		Date(int year, int month, int day): Year(year), Month(month), Day(day) {}
+        int Year;
+        int Month;
+        int Day;
     };
     
     inline time_t ConvertDateToCTime( Date date )
     {
         tm t;
-        t.tm_hour = t.tm_min = t.tm_sec = 0;
-        t.tm_year = date.Year - 1900;
-        t.tm_mon  = date.Month;
+        t.tm_hour = t.tm_min = t.tm_sec = t.tm_isdst = 0;
+        t.tm_year = date.Year - DATE_START_YEAR;
+        t.tm_mon  = date.Month - 1;
         t.tm_mday = date.Day;
         return std::mktime( &t );
     }
@@ -28,18 +35,19 @@ namespace Utils
     inline Date ConvertCTimeToDate( time_t time )
     {
         Date date;
-        auto t = std::localtime(&time);
-        if( t ) {
-            date.Year = t->tm_year + 1900;
-            date.Month = t->tm_mon;
-            date.Day = t->tm_mday;
-        }
+        tm t;
+        localtime_s(&t, &time);
+        date.Year = t.tm_year + DATE_START_YEAR;
+        date.Month = t.tm_mon + 1;
+        date.Day = t.tm_mday;
         return date;
     }
     
     inline void Trim(std::string &s) {
-        s.erase(s.begin(), std::find_if_not(s.begin(), s.end(), std::ptr_fun<int, int>(std::isspace)));
-        s.erase(std::find_if_not(s.rbegin(), s.rend(), std::ptr_fun<int, int>(std::isspace)).base(), s.end());
+        const char* space_chars = " \t\n\r";
+        size_t first_not_space = s.find_first_not_of( space_chars );
+        s.erase( 0, first_not_space );
+        s.erase( s.find_last_not_of(space_chars) + 1 );
     }
     
     inline std::vector<std::string> Split(const std::string &s, char delim) {

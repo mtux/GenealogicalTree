@@ -138,12 +138,14 @@ GenealogicalTree::PersonPtr GenealogicalTree::FindPerson( const std::string& nam
                                                           const std::string& location, time_t birth_date )
 {
     auto matched_people = FindPersonPtrByName( name );
-    for( const PersonPtr& person: matched_people ) {
-        if( person->Info.LastName == last_name &&
-            person->Info.Location == location &&
-            (birth_date == -1 || person->Info.BirthDate == birth_date)
+    auto count = matched_people.size();
+    for( unsigned i = 0; i < count; ++i )
+    {
+        if( matched_people.at(i)->Info.LastName == last_name &&
+            matched_people.at(i)->Info.Location == location &&
+            (birth_date == -1 || matched_people.at(i)->Info.BirthDate == birth_date)
           ) {
-                return person;
+                return matched_people.at(i);
             }
     }
     return nullptr;
@@ -166,7 +168,10 @@ GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByLocation( const st
 
 GenealogicalTree::PersonPtrs GenealogicalTree::FindPersonPtrByBirthDate( int year, int month, int day )
 {
-    return FindPersonPtrByKey( BirthDateMap, Utils::ConvertDateToCTime( Utils::Date{year, month, day} ) );
+    time_t time = Utils::ConvertDateToCTime( Utils::Date(year, month, day) );
+    if( time == -1 )
+        throw std::invalid_argument("Invalid Date!");
+    return FindPersonPtrByKey( BirthDateMap, time );
 }
 
 DescendantInfos GenealogicalTree::FindAllDescendantsForAllAscendants( const std::string& descendants_name,
@@ -177,19 +182,20 @@ DescendantInfos GenealogicalTree::FindAllDescendantsForAllAscendants( const std:
     
     DescendantInfos result;
     if( !descendants.empty() ) {
-        for( PersonPtr descendant: descendants ){
+        auto end_it = descendants.cend();
+        for( auto it = descendants.cbegin(); it != end_it; ++it ){
             if( visited_mask == 0 ) {
                 ClearVisitedMasks();
                 visited_mask = 1;
             }
             
-            AscendantPtrs ascendants = FindAllAscendants( ascendants_name, descendant, visited_mask );
+            AscendantPtrs ascendants = FindAllAscendants( ascendants_name, *it, visited_mask );
             
             AscendantInfos asc_infos;
             std::for_each( ascendants.cbegin(), ascendants.cend(), [&](const std::pair<PersonPtr, Distance>& asc){
-                asc_infos.emplace_back(asc.first->Info, asc.second);
+                asc_infos.push_back( AscendantInfo( asc.first->Info, asc.second ) );
             } );
-            result.emplace_back( descendant->Info, asc_infos );
+            result.push_back( DescendantInfo( (*it)->Info, asc_infos ) );
             
             visited_mask <<= 1;
         }
@@ -239,5 +245,9 @@ GenealogicalTree::AscendantPtrs GenealogicalTree::FindAllAscendants( const std::
 
 inline void GenealogicalTree::ClearVisitedMasks()
 {
-    std::for_each( NameMap.begin(), NameMap.end(), [](auto& pair){pair.second->Visited = 0;} );
+    auto it = NameMap.begin();
+    auto end_it = NameMap.end();
+    for(; it != end_it; ++it){
+        it->second->Visited = 0;
+    }
 }
